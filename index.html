@@ -53,14 +53,20 @@ body{display:flex;color:white;}
 .profile-left{display:flex;align-items:center;gap:20px;}
 
 .avatar{
-  width:70px;height:70px;border-radius:50%;
-  background:url('https://i.pravatar.cc/150') center/cover;
+  width:80px;height:80px;border-radius:50%;
+  background:url('profile.jpg') center/cover;
+  border:2px solid rgba(59,130,246,0.6);
+  box-shadow:0 0 20px rgba(59,130,246,0.4);
 }
 
 .profile-info p{opacity:0.7;font-size:14px;}
 
+/* SOCIAL */
 .socials{margin-top:10px;display:flex;gap:10px;}
-.socials a{color:white;text-decoration:none;opacity:0.7;transition:0.3s;}
+.socials a{
+  color:white;text-decoration:none;opacity:0.7;
+  transition:0.3s;font-size:16px;
+}
 .socials a:hover{opacity:1;transform:scale(1.2);}
 
 .divider{
@@ -93,6 +99,7 @@ body{display:flex;color:white;}
   padding:30px;border-radius:20px;margin-bottom:20px;
 }
 
+/* HERO */
 .hero h1{font-size:40px;color:#22c55e;}
 
 .metrics{display:flex;gap:20px;margin-top:30px;}
@@ -145,11 +152,14 @@ body{display:flex;color:white;}
 
 <!-- TOP CARD -->
 <div class="top-card">
+
   <div class="profile-left">
     <div class="avatar"></div>
+
     <div class="profile-info">
       <h2>Sathish Kumar</h2>
       <p>DevOps | Azure | AKS | CI/CD</p>
+
       <div class="socials">
         <a href="https://linkedin.com/in/your-profile" target="_blank">🔗</a>
         <a href="https://github.com/sathish-katakam" target="_blank">💻</a>
@@ -164,19 +174,23 @@ body{display:flex;color:white;}
       <span>EMAIL</span>
       your@email.com
     </div>
+
     <div class="info-block">
       <span>CV</span>
       <a href="#">Download ↓</a>
     </div>
+
     <div class="info-block">
       <span>LOCATION</span>
       Hyderabad, IN
     </div>
+
     <div class="info-block">
       <span>STATUS</span>
       <span class="status">🟢 Open to DevOps Roles</span>
     </div>
   </div>
+
 </div>
 
 <!-- MAIN -->
@@ -240,7 +254,7 @@ body{display:flex;color:white;}
 <div id="contact" class="section">
   <div class="card">
     <h2>Contact</h2>
-    <p>Email: sathish.katakam@gmail.com</p>
+    <p>Email: your@email.com</p>
   </div>
 </div>
 
