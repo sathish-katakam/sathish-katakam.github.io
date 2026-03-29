@@ -8,41 +8,22 @@
 <style>
 body {
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   background:#0f172a;
   color:white;
 }
 
-nav {
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  padding:20px;
-  background:#020617;
-}
-
-nav a {
-  color:white;
-  text-decoration:none;
-}
-
 .container {
-  max-width:1100px;
+  max-width:900px;
   margin:auto;
-  padding:60px 20px;
-}
-
-.cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
+  padding:40px;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:15px;
-  transition:0.3s;
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
 
   opacity:0;
   transform:translateY(30px);
@@ -52,11 +33,6 @@ nav a {
 .card:nth-child(1){ animation-delay:0.2s; }
 .card:nth-child(2){ animation-delay:0.4s; }
 .card:nth-child(3){ animation-delay:0.6s; }
-
-.card:hover {
-  transform: translateY(-10px);
-  background: rgba(255,255,255,0.1);
-}
 
 @keyframes fadeUp {
   to {
@@ -69,40 +45,25 @@ nav a {
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="portfolio.html">Portfolio</a>
-</nav>
-
 <div class="container">
+
   <h1>Projects</h1>
 
-  <div class="cards">
+  <div class="card">
+    <h3>AKS Multi-Tenant Platform</h3>
+    <p><b>Problem:</b> Scaling infrastructure</p>
+    <p><b>Solution:</b> AKS with namespace isolation</p>
+    <p><b>Impact:</b> 494 tenants</p>
+  </div>
 
-    <div class="card">
-      <h3>AKS Multi-Tenant Platform</h3>
-      <p><strong>Problem:</strong> Scaling infra across teams</p>
-      <p><strong>Solution:</strong> AKS with namespace isolation & RBAC</p>
-      <p><strong>Impact:</strong> 494 tenants across 35 LOBs</p>
-      <p><strong>Tech:</strong> Azure, AKS, Terraform</p>
-    </div>
+  <div class="card">
+    <h3>CI/CD Pipelines</h3>
+    <p>Automated deployments</p>
+  </div>
 
-    <div class="card">
-      <h3>CI/CD Pipelines</h3>
-      <p><strong>Problem:</strong> Manual deployments</p>
-      <p><strong>Solution:</strong> Automated pipelines</p>
-      <p><strong>Impact:</strong> Faster & reliable releases</p>
-      <p><strong>Tech:</strong> GitHub Actions, Jenkins</p>
-    </div>
-
-    <div class="card">
-      <h3>Azure Landing Zone</h3>
-      <p><strong>Problem:</strong> Unstructured cloud setup</p>
-      <p><strong>Solution:</strong> Secure landing zones</p>
-      <p><strong>Impact:</strong> Scalable enterprise infra</p>
-      <p><strong>Tech:</strong> Azure, Terraform</p>
-    </div>
-
+  <div class="card">
+    <h3>Landing Zone</h3>
+    <p>Terraform-based infra</p>
   </div>
 
 </div>
