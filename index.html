@@ -31,16 +31,19 @@ body{padding:20px;color:white;}
 .avatar{width:80px;height:80px;border-radius:50%;background:url('profile.jpg') center/cover;
   border:2px solid rgba(59,130,246,0.6);}
 .profile-info p{opacity:0.7;font-size:14px;}
-.socials{margin-top:10px;display:flex;gap:18px;}
-.socials a{color:rgba(255,255,255,0.6);font-size:18px;}
-.socials a:hover{color:#60a5fa;}
+.socials {margin-top: 10px;display: flex;align-items: center;gap: 18px;}
+.socials a:hover{text-decoration: none;color:#60a5fa;}
+.socials a {display: flex;align-items: center;justify-content: center;font-size: 18px;color: rgba(255,255,255,0.6);text-decoration: none}
 .divider{width:1px;height:60px;background:rgba(255,255,255,0.1);}
 .profile-right{display:flex;gap:40px;}
 .info-block span{font-size:12px;opacity:0.6;}
-.info-row{display:flex;gap:8px;font-size:14px;}
-.info-row i{color:#60a5fa;}
-.info-row a{color:#60a5fa;text-decoration:none;}
+.info-row {display: flex;align-items: center;gap: 8px;font-size: 14px;}
+.info-row p,info-row a {margin: 0;line-height: 1;}
+.info-row i {text-decoration: none;font-size: 14px;display: flex;align-items: center;}
+.info-row a {text-decoration: none;}
+.info-block {display: flex;flex-direction: column;gap: 4px;}
 .status{color:#22c55e;}
+
 
 /* MAIN */
 .main {position:absolute;top:180px;left:290px;right:150px;bottom:40px;overflow-y:auto;}
@@ -185,7 +188,7 @@ body{padding:20px;color:white;}
 .blog-post .post-close { background:transparent; border:1px solid rgba(255,255,255,0.08); color:#cbd5e1; padding:8px 10px; border-radius:8px; cursor:pointer; }
 
 /* Post body: two-column layout on wide screens */
-.post-body { margin-top:18px; display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:start; }
+.post-body { margin-top:18px; display:grid;grid-template-columns: 1fr; gap:18px; align-items:start; }
 /* Each section is a card; default occupies one column */
 .post-section { background: rgba(255,255,255,0.02); padding:16px; border-radius:10px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
 .post-section h2 { color:#60a5fa; margin:0 0 8px; font-size:1.05rem; }
@@ -235,7 +238,7 @@ body{padding:20px;color:white;}
 .project-sub { color:rgba(255,255,255,0.75); font-size:0.95rem; margin-top:8px; }
 
 /* Two-column layout for flow and architecture */
-.project-grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:14px; }
+.project-grid { display:grid; grid-template-columns: 1fr; grid-template-columns: 1fr; gap:16px; margin-top:14px; }
 .project-section { background: rgba(255,255,255,0.02); padding:14px; border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
 .project-section.full { grid-column: 1 / -1; }
 
@@ -255,6 +258,18 @@ body{padding:20px;color:white;}
 /* Responsive */
 @media (max-width:980px) {
   .project-grid { grid-template-columns: 1fr; }
+}
+.project-header.clickable {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-header.clickable:hover {
+  transform: scale(1.02);
+}
+
+.project-details {
+  display: none;
 }
 </style>
 </head>
@@ -307,17 +322,16 @@ body{padding:20px;color:white;}
     <div id="about" class="section active">
       <div class="card">
         <h2>About Me</h2>
-        <p>I am a Senior DevOps Engineer with over 12 years of IT experience, including 6+ years specializing in DevOps and cloud engineering. My expertise lies in building and operating scalable, reliable platforms across Azure and AWS.</p>
-        <p>In my current role, I manage Kubernetes-based platforms supporting 20+ business units across 20+ clusters (300+ nodes), handling more than 200K daily requests. Through automation, GitOps (ArgoCD), and infrastructure as code with Terraform, I’ve improved deployment success rates by 40%, reduced downtime by 25%, and optimized cloud costs by 15%.</p>
-        <p>My background includes designing multi‑region architectures for high availability and disaster recovery, implementing CI/CD pipelines, and troubleshooting complex production issues such as Kubernetes pod failures and system reliability challenges. I bring a strong focus on operational excellence, incident management, and continuous improvement.</p>
-        <p>I’m passionate about platform engineering, scalability, and reliability at scale, and I look forward to contributing these strengths to teams that value innovation and resilience.</p>
+        <p>Senior DevOps Engineer with 12+ years experience, specializing in Kubernetes, Azure, and AWS.</p>
+        <p>Operate multi-tenant Kubernetes platforms supporting 64+ LOBs and 500+ tenants. Delivered 40% deployment improvement, 25% downtime reduction, and 15% cost savings using GitOps and Terraform.</p>
+        <p>Deliver high availability through multi-region setups, implement CI/CD pipelines, and resolve complex production issues including Kubernetes failures. Strong focus on reliability, incident management, and continuous improvement.</p>
       </div>
 
       <div class="card">
         <h2>What I'm Doing</h2>
         <div class="doing-grid">
-          <div class="doing-item"><h3>DevOps</h3><p>I enjoy improving the speed and quality of delivery, automating processes, and achieving CI/CD.</p></div>
-          <div class="doing-item"><h3>Cloud Engineer</h3><p>I enjoy designing, securing, and maintaining cloud-based infrastructure and applications.</p></div>
+          <div class="doing-item"><h3>DevOps</h3><p>Focused on improving delivery speed and quality through automation and robust CI/CD pipelines.</p></div>
+          <div class="doing-item"><h3>Cloud Engineer</h3><p>Operate and secure scalable cloud infrastructure on Azure.Ensuring reliability, performance, and availability.</p></div>
           <div class="doing-item"><h3>SRE</h3><p>I’m curious about the processes and tools that ensure scalability, reliability, and availability of systems.</p></div>
           <div class="doing-item"><h3>Software Development</h3><p>I enjoy learning software development, whether for personal growth or specific projects.</p></div>
         </div>
@@ -334,20 +348,22 @@ body{padding:20px;color:white;}
 		<button class="filter-btn" onclick="filterPortfolio('cert', this)">Certifications</button>		
 		<button class="filter-btn" onclick="filterPortfolio('badge', this)">Badges</button>
 		</div>
-
-		<!-- Certification Grid -->
 		<div class="portfolio-grid" style="grid-template-columns: repeat(2, 1fr);">
   		<!-- Projects (NOW CORRECTLY INSIDE SAME GRID) -->
-		<div class="portfolio-item project">
-		  <div class="project-header">
+          <div class="portfolio-item project">
+		  <!-- CLICKABLE HEADER -->
+		  <div class="project-header clickable" onclick="toggleProject(this)">
 			<div>
 			  <div class="project-title">Governed Multi‑Tenant AKS Platform — GitOps Onboarding</div>
 			  <div class="project-sub">Automated tenant & application onboarding using Terraform, GitOps (ArgoCD), Vault, and Istio</div>
+			  <div class="project-sub">Click to view details</div>
 			</div>
 		  </div>
 
-		  <!-- High-Level Flow -->
-		  <div class="project-grid" style="margin-top:14px;">
+		  <!-- HIDDEN DETAILS -->
+			<div class="project-details">
+			<div class="portfolio-item project">
+			<div class="project-grid" style="margin-top:14px;">
 			<section class="project-section">
 			  <h3 class="hi">1. High‑Level Flow</h3>
 			  <p class="subhi">Short summary</p>
@@ -446,6 +462,305 @@ body{padding:20px;color:white;}
 			</section>
 		  </div>
 		</div>
+	   </div>
+	 </div>
+		
+		<div class="portfolio-item project">
+		  <!-- CLICKABLE HEADER -->
+		  <div class="project-header clickable" onclick="toggleProject(this)">
+			<div>
+			  <div class="project-title">Enterprise CI/CD Platform — Multi-Branch Release Strategy</div>
+			  <div class="project-sub">Structured branching, versioning, and CI/CD pipelines ensuring controlled releases across Dev, QA, and Production</div>
+			  <div class="project-sub">Click to view details</div>
+			</div>
+		  </div>
+
+		  <!-- HIDDEN DETAILS -->
+		  <div class="project-details">
+			<div class="portfolio-item project">
+			  <div class="project-grid" style="margin-top:14px;">
+			<!-- High Level Flow -->
+			<section class="project-section">
+			  <h3 class="hi">1. High-Level Flow</h3>
+			  <p class="subhi">Short summary</p>
+
+			  <p class="project-sub">
+				Designed a multi-environment CI/CD platform with strict promotion flow across Junior → Queen → King layers, ensuring stability and controlled releases.
+			  </p>
+
+			  <h4 class="subhi">Flow</h4>
+			  <ol class="flow-list">
+				<li>Developer Commit → Junior (Feature Branch)</li>
+				<li>Validation → Queen (Pre-Stable)</li>
+				<li>Promotion → King (Production Stable)</li>
+				<li>CI/CD Pipelines Trigger Based on Environment</li>
+				<li>Deployment Controlled via Environment Strategy</li>
+			  </ol>
+			</section>
+
+			<!-- Core Architecture -->
+			<section class="project-section">
+			  <h3 class="hi">2. Core Architecture & Strategy</h3>
+
+			  <h4 class="subhi">1. Branching Model</h4>
+			  <ul class="bullet-list">
+				<li><strong>Junior</strong> — Feature development (AppId.Major.Minor.FeatureBranch)</li>
+				<li><strong>Queen</strong> — Pre-stable validation (+1)</li>
+				<li><strong>King</strong> — Stable production branch (+2)</li>
+			  </ul>
+
+			  <h4 class="subhi">2. Versioning Strategy</h4>
+			  <ul class="bullet-list">
+				<li><strong>Minor Upgrade:</strong> Progressive versioning across environments</li>
+				<li><strong>Major Upgrade:</strong> Controlled version increment ensuring compatibility</li>
+			  </ul>
+
+			  <div class="callout">
+				This enforced strict release governance and traceability across environments.
+			  </div>
+			</section>
+
+			<!-- CI/CD Design -->
+			<section class="project-section">
+			  <h4 class="subhi">3. CI/CD Pipeline Design</h4>
+
+			  <ul class="bullet-list">
+				<li><strong>Dev:</strong> Immediate deployment on commit (fast feedback)</li>
+				<li><strong>QA:</strong> Separate CI/CD pipelines</li>
+				<li>Continuous deployment (on demand)</li>
+				<li>Nightly scheduled builds (EOD → next day)</li>
+				<li><strong>Production (King):</strong> Stable releases with strict promotion</li>
+			  </ul>
+
+			  <div class="callout">
+				Separation of CI and CD prevented mixing validation and delivery stages.
+			  </div>
+			</section>
+
+			<!-- Infrastructure -->
+			<section class="project-section">
+			  <h4 class="subhi">4. Infrastructure & Execution</h4>
+
+			  <ul class="bullet-list">
+				<li><strong>Jenkins:</strong> Freestyle jobs at scale</li>
+				<li>Junior → 7 agents</li>
+				<li>Queen → 5 agents</li>
+				<li>King → 2 agents</li>
+				<li><strong>SaltStack:</strong> Firewall, environment setup, Java installation</li>
+				<li><strong>IIS:</strong> Application service hosting</li>
+			  </ul>
+
+			  <div class="callout">
+				Resource allocation aligned with workload intensity across environments.
+			  </div>
+			</section>
+
+			<!-- Automation -->
+			<section class="project-section">
+			  <h4 class="subhi">5. Custom Automation</h4>
+
+			  <ul class="bullet-list">
+				<li>Developed <strong>Go-based scripts</strong> for deployments</li>
+				<li>Automated database upgrade workflows</li>
+				<li>Reduced manual intervention and improved repeatability</li>
+			  </ul>
+			</section>
+
+			<!-- Database -->
+			<section class="project-section">
+			  <h4 class="subhi">6. Database Modernization (Non-Prod)</h4>
+
+			  <ul class="bullet-list">
+				<li>Upgraded Oracle 12c → 19c across Dev & QA</li>
+				<li>Designed downtime and rollback strategies</li>
+				<li>Ensured zero disruption to CI/CD workflows</li>
+				<li>Automated upgrade and validation processes</li>
+			  </ul>
+
+			  <div class="callout">
+				Non-prod upgrades used as risk mitigation before production rollout.
+			  </div>
+			</section>
+
+			<!-- Validation -->
+			<section class="project-section">
+			  <h4 class="subhi">7. Validation & Risk Handling</h4>
+
+			  <ul class="bullet-list">
+				<li><strong>Rollback:</strong> Schema-based restore using export/import</li>
+				<li><strong>Backup:</strong> Pre-upgrade snapshots maintained</li>
+				<li><strong>Validation:</strong> Schema comparison and integration testing</li>
+				<li><strong>Testing:</strong> Controlled datasets for query validation</li>
+			  </ul>
+			</section>
+
+			<!-- Issues -->
+			<section class="project-section">
+			  <h4 class="subhi">8. Issues Identified & Resolved</h4>
+
+			  <ul class="bullet-list">
+				<li>Deprecated SQL syntax and compatibility issues</li>
+				<li>Application–database integration failures</li>
+				<li>Resolved in non-prod before production impact</li>
+			  </ul>
+			</section>
+
+			<!-- End-to-End -->
+			<section class="project-section full">
+			  <h3 class="hi">3. End-to-End Flow</h3>
+			  <p class="project-sub">
+				Code flows through Junior (feature), Queen (validation), and King (production) branches. CI/CD pipelines execute environment-specific deployments, while infrastructure and configurations are standardized via SaltStack. Database upgrades and deployments are automated using Go scripts, ensuring consistent and reliable delivery.
+			  </p>
+			</section>
+
+			<!-- Strengths -->
+			<section class="project-section full">
+			  <h3 class="hi">4. Architecture Strengths</h3>
+			  <div class="strengths">
+				<div class="strength">✔ Structured branching strategy (Junior → Queen → King)</div>
+				<div class="strength">✔ Strong release governance and traceability</div>
+				<div class="strength">✔ Automated deployments using Go scripts</div>
+				<div class="strength">✔ Scalable Jenkins infrastructure with optimized agents</div>
+				<div class="strength">✔ Risk reduction through non-prod validation</div>
+			  </div>
+			</section>
+		  </div>
+		</div>
+	   </div>
+	 </div>
+		
+		<div class="portfolio-item project">
+		  <!-- CLICKABLE HEADER -->
+		  <div class="project-header clickable" onclick="toggleProject(this)">
+			<div>
+			  <div class="project-title">Hybrid CI/CD Platform — Jenkins + Azure YAML</div>
+			  <div class="project-sub">Click to view details</div>
+			</div>
+		  </div>
+
+		  <!-- HIDDEN DETAILS -->
+		  <div class="project-details">
+
+			<div class="portfolio-item project">
+
+			  <div class="project-grid" style="margin-top:14px;">
+
+				<!-- High-Level Flow -->
+				<section class="project-section">
+				  <h3 class="hi">1. High-Level Flow</h3>
+				  <p class="subhi">Pipeline overview</p>
+
+				  <img src="images/CICD.png" 
+					   alt="CI/CD Pipeline Diagram"
+					   style="width:100%;border-radius:10px;margin-bottom:10px;"
+					   onclick="openModal(this)">
+
+				  <p class="project-sub">
+					This repository demonstrates a hybrid CI/CD platform where code flows from GitHub through Jenkins and Azure YAML pipelines, builds Docker images, pushes to DockerHub, and deploys to Kubernetes using ArgoCD.
+				  </p>
+
+				  <h4 class="subhi">Flow</h4>
+				  <ol class="flow-list">
+					<li>Code Commit → GitHub</li>
+					<li>Trigger Jenkins / Azure YAML Pipeline</li>
+					<li>Build → Test → Package</li>
+					<li>Docker Image Build & Push → DockerHub</li>
+					<li>Update Kubernetes Manifest (Shell Script)</li>
+					<li>ArgoCD Sync → Kubernetes Deployment</li>
+				  </ol>
+				</section>
+
+				<!-- Core Architecture -->
+				<section class="project-section">
+				  <h3 class="hi">2. Core Architecture & Strategy</h3>
+
+				  <h4 class="subhi">1. Dual CI/CD Strategy</h4>
+				  <ul class="bullet-list">
+					<li><strong>Jenkins</strong> — Freestyle jobs for enterprise CI workloads</li>
+					<li><strong>Azure YAML</strong> — Pipeline-as-code for scalable automation</li>
+				  </ul>
+
+				  <div class="callout">
+					Demonstrates ability to work with both legacy and modern CI/CD ecosystems.
+				  </div>
+
+				  <h4 class="subhi" style="margin-top:10px;">2. Pipeline Lifecycle</h4>
+				  <ul class="bullet-list">
+					<li>Code Commit → Build → Test → Package → Deploy</li>
+					<li>CI handles build and validation</li>
+					<li>CD handles deployment automation</li>
+				  </ul>
+				</section>
+
+				<!-- CI/CD Design -->
+				<section class="project-section">
+				  <h4 class="subhi">3. CI/CD Pipeline Design</h4>
+
+				  <ul class="bullet-list">
+					<li>Automated build and test execution</li>
+					<li>Artifact creation and versioning</li>
+					<li>Docker image creation and registry push</li>
+					<li>Separation of CI (build) and CD (deployment)</li>
+				  </ul>
+
+				  <div class="callout">
+					Clear separation improves reliability and reduces deployment risks.
+				  </div>
+				</section>
+
+				<!-- Containerization -->
+				<section class="project-section">
+				  <h4 class="subhi">4. Containerization & Deployment</h4>
+
+				  <ul class="bullet-list">
+					<li><strong>Docker</strong> — Application containerization</li>
+					<li><strong>DockerHub</strong> — Image repository</li>
+					<li><strong>Kubernetes</strong> — Container orchestration</li>
+					<li><strong>ArgoCD</strong> — GitOps-based deployment</li>
+				  </ul>
+
+				  <div class="callout">
+					Enables scalable, consistent, and declarative deployments.
+				  </div>
+				</section>
+
+				<!-- Automation -->
+				<section class="project-section">
+				  <h4 class="subhi">5. Automation Strategy</h4>
+
+				  <ul class="bullet-list">
+					<li>Shell scripts used for deployment automation</li>
+					<li>Automated update of Kubernetes manifest files</li>
+					<li>Pipeline-driven deployment execution</li>
+				  </ul>
+				</section>
+
+				<!-- End-to-End -->
+				<section class="project-section full">
+				  <h3 class="hi">3. End-to-End Flow</h3>
+				  <p class="project-sub">
+					Code is committed to GitHub, triggering Jenkins or Azure YAML pipelines. The application is built, tested, and packaged into Docker images, which are pushed to DockerHub. Kubernetes manifests are updated using shell scripts, and ArgoCD synchronizes the desired state to deploy the application into the Kubernetes cluster.
+				  </p>
+				</section>
+
+				<!-- Strengths -->
+				<section class="project-section full">
+				  <h3 class="hi">4. Architecture Strengths</h3>
+				  <div class="strengths">
+					<div class="strength">✔ Hybrid CI/CD (Jenkins + Azure YAML)</div>
+					<div class="strength">✔ End-to-end automation from build to deployment</div>
+					<div class="strength">✔ Docker-based containerization</div>
+					<div class="strength">✔ GitOps deployment using ArgoCD</div>
+					<div class="strength">✔ Automated manifest updates using shell scripts</div>
+				  </div>
+				</section>
+
+			  </div>
+			</div>
+
+		  </div>
+		</div>		
+		
 		  <div class="portfolio-item cert">
 			<h3>Certification</h3>
 			<img src="images/Google.png" alt="Google Cloud Generative AI Leader Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
@@ -1068,24 +1383,25 @@ function showSection(id, el) {
 
 
 // ================== PORTFOLIO FILTER (FIXED) ==================
-function filterPortfolio(type, el){
+function filterPortfolio(type, btn){
+  const items = document.querySelectorAll('.portfolio-item, .project-wrapper');
 
-  document.querySelectorAll('.filter-btn').forEach(btn=>{
-    btn.classList.remove('active');
-  });
-
-  if(el) el.classList.add('active');
-
-  document.querySelectorAll('.portfolio-item').forEach(item=>{
+  items.forEach(item => {
     if(type === 'all'){
       item.style.display = 'block';
     } else {
-      item.style.display = item.classList.contains(type) ? 'block' : 'none';
+      if(item.classList.contains(type)){
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
     }
   });
 
+  // active button UI
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
-
 
 // ================== IMAGE MODAL ==================
 function openModal(img){
@@ -1187,6 +1503,23 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
       openLightbox(target.src);
     }
   });
+  
+  function toggleProject(el){
+
+  const details = el.nextElementSibling;
+
+  // close others (clean UX)
+  document.querySelectorAll('.project-details').forEach(d => {
+    if(d !== details) d.style.display = 'none';
+  });
+
+  // toggle current
+  if(details.style.display === 'block'){
+    details.style.display = 'none';
+  } else {
+    details.style.display = 'block';
+  }
+}
 </script>
 </body>
 </html>
