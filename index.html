@@ -330,76 +330,15 @@ body{padding:20px;color:white;}
 		<h2>Portfolio</h2>
 		<div class="filters">
 		<button class="filter-btn active" onclick="filterPortfolio('all', this)">All</button>
-		<button class="filter-btn" onclick="filterPortfolio('cert', this)">Certifications</button>
 		<button class="filter-btn" onclick="filterPortfolio('project', this)">Projects</button>
+		<button class="filter-btn" onclick="filterPortfolio('cert', this)">Certifications</button>		
 		<button class="filter-btn" onclick="filterPortfolio('badge', this)">Badges</button>
 		</div>
 
 		<!-- Certification Grid -->
 		<div class="portfolio-grid" style="grid-template-columns: repeat(2, 1fr);">
-
-		   <!-- Google Cloud Generative AI Leader -->
-		  <div class="portfolio-item cert">
-			<h3>Certification</h3>
-			<img src="images/Google.png" alt="Google Cloud Generative AI Leader Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
-			<p><strong>Google Cloud Certified: Generative AI Leader</strong></p>
-			<p>Issued by: Google Cloud</p>
-			<p>Issued Date: Feb 17, 2026</p>
-			<p>Expires: Feb 17, 2029</p>
-			<p>Series ID: 52963</p>
-		  </div>
-
-		  <!-- Microsoft DevOps Engineer Expert -->
-		  <div class="portfolio-item cert">
-			<h3>Certification</h3>
-			<img src="images/AZ400.png" alt="Microsoft DevOps Engineer Expert Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
-			<p><strong>Microsoft Certified: DevOps Engineer Expert</strong></p>
-			<p>Issued by: Microsoft</p>
-			<p>Earned on: June 21, 2025</p>
-			<p>Expires: June 22, 2026</p>
-			<p>Credential ID: 708476EFD2FA98CC</p>
-		  </div>
-
-		  <!-- Microsoft Azure Administrator Associate -->
-		  <div class="portfolio-item cert">
-			<h3>Certification</h3>
-			<img src="images/104.png" alt="Microsoft Azure Administrator Associate Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
-			<p><strong>Microsoft Certified: Azure Administrator Associate</strong></p>
-			<p>Issued by: Microsoft</p>
-			<p>Earned on: June 21, 2025</p>
-			<p>Expires: June 22, 2026</p>
-			<p>Credential ID: EF0EA417A4BFBF16</p>
-		  </div>
-				
-		  <!-- ITIL Foundation -->
-			 <div class="portfolio-item cert">
-			<h3>Certification</h3>
-			<img src="images/ITIL.png" alt="ITIL Foundation Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
-			<p><strong>ITIL® Foundation Certificate in IT Service Management</strong></p>
-			<p>Issued by: APMG International / AXELOS</p>
-			<p>Effective from: 10 June 2016</p>
-			<p>Certificate No: 04010755-01-FCAW</p>
-		  </div>
-		 <!-- BADGES (NOW CORRECTLY INSIDE SAME GRID) -->
-		  <div class="portfolio-item badge">
-			<h3>Badge</h3>
-			<img src="images/AZ104.jpg"  onclick="openModal(this)">
-			<p><strong>Azure Administrator Badge</strong></p>
-		  </div>
-
-		  <div class="portfolio-item badge">
-			<h3>Badge</h3>
-			<img src="images/AZ400Badge.png"  onclick="openModal(this)">
-			<p><strong>DevOps Engineer Badge</strong></p>
-		  </div>
-
-		  <div class="portfolio-item badge">
-			<h3>Badge</h3>
-			<img src="images/AI.png" onclick="openModal(this)">
-			<p><strong>Google AI Leader Badge</strong></p>
-		  </div>
-		<!-- Projects (NOW CORRECTLY INSIDE SAME GRID) -->
-		<div class="project-card" id="project-gitops-aksp">
+  		<!-- Projects (NOW CORRECTLY INSIDE SAME GRID) -->
+		<div class="portfolio-item project">
 		  <div class="project-header">
 			<div>
 			  <div class="project-title">Governed Multi‑Tenant AKS Platform — GitOps Onboarding</div>
@@ -507,7 +446,65 @@ body{padding:20px;color:white;}
 			</section>
 		  </div>
 		</div>
+		  <div class="portfolio-item cert">
+			<h3>Certification</h3>
+			<img src="images/Google.png" alt="Google Cloud Generative AI Leader Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<p><strong>Google Cloud Certified: Generative AI Leader</strong></p>
+			<p>Issued by: Google Cloud</p>
+			<p>Issued Date: Feb 17, 2026</p>
+			<p>Expires: Feb 17, 2029</p>
+			<p>Series ID: 52963</p>
+		  </div>
+
+		  <!-- Microsoft DevOps Engineer Expert -->
+		  <div class="portfolio-item cert">
+			<h3>Certification</h3>
+			<img src="images/AZ400.png" alt="Microsoft DevOps Engineer Expert Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<p><strong>Microsoft Certified: DevOps Engineer Expert</strong></p>
+			<p>Issued by: Microsoft</p>
+			<p>Earned on: June 21, 2025</p>
+			<p>Expires: June 22, 2026</p>
+			<p>Credential ID: 708476EFD2FA98CC</p>
+		  </div>
+
+		  <!-- Microsoft Azure Administrator Associate -->
+		  <div class="portfolio-item cert">
+			<h3>Certification</h3>
+			<img src="images/104.png" alt="Microsoft Azure Administrator Associate Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<p><strong>Microsoft Certified: Azure Administrator Associate</strong></p>
+			<p>Issued by: Microsoft</p>
+			<p>Earned on: June 21, 2025</p>
+			<p>Expires: June 22, 2026</p>
+			<p>Credential ID: EF0EA417A4BFBF16</p>
+		  </div>
 				
+		  <!-- ITIL Foundation -->
+			 <div class="portfolio-item cert">
+			<h3>Certification</h3>
+			<img src="images/ITIL.png" alt="ITIL Foundation Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<p><strong>ITIL® Foundation Certificate in IT Service Management</strong></p>
+			<p>Issued by: APMG International / AXELOS</p>
+			<p>Effective from: 10 June 2016</p>
+			<p>Certificate No: 04010755-01-FCAW</p>
+		  </div>
+		 <!-- BADGES (NOW CORRECTLY INSIDE SAME GRID) -->
+		  <div class="portfolio-item badge">
+			<h3>Badge</h3>
+			<img src="images/AZ104.jpg"  onclick="openModal(this)">
+			<p><strong>Azure Administrator Badge</strong></p>
+		  </div>
+
+		  <div class="portfolio-item badge">
+			<h3>Badge</h3>
+			<img src="images/AZ400Badge.png"  onclick="openModal(this)">
+			<p><strong>DevOps Engineer Badge</strong></p>
+		  </div>
+
+		  <div class="portfolio-item badge">
+			<h3>Badge</h3>
+			<img src="images/AI.png" onclick="openModal(this)">
+			<p><strong>Google AI Leader Badge</strong></p>
+		  </div>				
 		</div>
 	  </div>
 	</div>
