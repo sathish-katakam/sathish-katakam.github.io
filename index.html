@@ -220,6 +220,42 @@ body{padding:20px;color:white;}
 @media (max-height:700px) {
   .blog-post { max-height: calc(100vh - 140px); overflow:auto; }
 }
+/* Project card styles (add to your main stylesheet if preferred) */
+.project-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(96,165,250,0.06);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  color: #e6eefc;
+}
+.project-header { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.project-title { font-size:1.15rem; color:#ffffff; background:linear-gradient(90deg,#2563eb,#3b82f6); padding:8px 12px; border-radius:8px; }
+.project-sub { color:rgba(255,255,255,0.75); font-size:0.95rem; margin-top:8px; }
+
+/* Two-column layout for flow and architecture */
+.project-grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:14px; }
+.project-section { background: rgba(255,255,255,0.02); padding:14px; border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
+.project-section.full { grid-column: 1 / -1; }
+
+/* Headings and highlights */
+.hi { color:#60a5fa; margin:0 0 8px; font-size:1.02rem; }
+.subhi { color:#93c5fd; margin:6px 0; font-size:0.98rem; }
+.flow-list { list-style: decimal; margin-left:18px; color:rgba(255,255,255,0.92); }
+.bullet-list { list-style: disc; margin-left:18px; color:rgba(255,255,255,0.92); }
+
+/* Strengths box */
+.strengths { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+.strength { background: linear-gradient(90deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02)); padding:10px; border-radius:8px; color:#dfffe6; border:1px solid rgba(34,197,94,0.06); }
+
+/* Small callout */
+.callout { background: linear-gradient(90deg, rgba(245,158,11,0.06), rgba(245,158,11,0.02)); padding:10px; border-radius:8px; color:#fff6e6; border:1px solid rgba(245,158,11,0.06); }
+
+/* Responsive */
+@media (max-width:980px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 
@@ -363,11 +399,116 @@ body{padding:20px;color:white;}
 			<p><strong>Google AI Leader Badge</strong></p>
 		  </div>
 		<!-- Projects (NOW CORRECTLY INSIDE SAME GRID) -->
-		<div class="portfolio-item project">
-		  <h3>Project</h3>
-		  <img src="images/Kubenetes.jpg"  onclick="openModal(this)">
-		  <p><strong>High-Availability Network Design</strong></p>
+		<div class="project-card" id="project-gitops-aksp">
+		  <div class="project-header">
+			<div>
+			  <div class="project-title">Governed Multi‑Tenant AKS Platform — GitOps Onboarding</div>
+			  <div class="project-sub">Automated tenant & application onboarding using Terraform, GitOps (ArgoCD), Vault, and Istio</div>
+			</div>
+		  </div>
+
+		  <!-- High-Level Flow -->
+		  <div class="project-grid" style="margin-top:14px;">
+			<section class="project-section">
+			  <h3 class="hi">1. High‑Level Flow</h3>
+			  <p class="subhi">Short summary</p>
+			  <img src="images/Kubenetes.jpg"  onclick="openModal(this)">
+		      <p><strong>High-Availability Network Design</strong></p>
+			  <p class="project-sub">We follow a governed multi‑tenant AKS platform using GitOps. Every onboarding—from infra to app—is controlled via pipelines and repositories, not manual work.</p>
+
+			  <h4 class="subhi">Flow</h4>
+			  <ol class="flow-list">
+				<li>ARB Approval → Infra Definition</li>
+				<li>Tenant Onboarding → Landing Zone Creation</li>
+				<li>Application Onboarding → GitOps Setup</li>
+				<li>Security + Networking → Vault, Istio, Whitelisting</li>
+				<li>Deployment → ArgoCD Sync (Manual for Prod)</li>
+			  </ol>
+			</section>
+
+			<!-- Step-by-step architecture -->
+			<section class="project-section">
+			  <h3 class="hi">2. Step‑by‑Step Architecture</h3>
+
+			  <h4 class="subhi">1. Architect Review Board (ARB)</h4>
+			  <p class="project-sub"><strong>Purpose:</strong> Governance, not just approval.</p>
+			  <ul class="bullet-list">
+				<li>Defines T‑shirt size (S/M/L → CPU, memory, node pools)</li>
+				<li>Region strategy (Single / Multi‑region)</li>
+				<li>Compliance rules and network boundaries</li>
+			  </ul>
+			  <div class="callout">ARB ensures cost control, standardization, and avoids resource sprawl.</div>
+
+			  <h4 class="subhi" style="margin-top:10px;">2. Tenant Onboarding (Platform Layer)</h4>
+			  <p class="project-sub"><strong>Provisioning via Terraform (Landing Zones)</strong></p>
+			  <ul class="bullet-list">
+				<li>Resource Groups, AKS clusters, Namespace segregation</li>
+				<li>Networking (VNet, Subnets), IAM / RBAC</li>
+			  </ul>
+			  <p class="project-sub"><strong>Output:</strong> A ready platform where apps can be deployed.</p>
+			</section>
+
+			<!-- Application Onboarding + Security -->
+			<section class="project-section">
+			  <h4 class="subhi">3. Application Onboarding (GitOps Core)</h4>
+			  <p class="project-sub">JSON input drives automation pipelines to create:</p>
+			  <ul class="bullet-list">
+				<li><strong>Application Repo</strong> — source code and Helm charts</li>
+				<li><strong>ArgoCD Repo</strong> — Kubernetes manifests and environment configs (Dev/UAT/Prod)</li>
+				<li><strong>Vault Repo</strong> — secrets stored securely in HashiCorp Vault</li>
+			  </ul>
+			  <p class="project-sub">We follow a GitOps model where ArgoCD continuously syncs desired state from Git to AKS.</p>
+
+			  <h4 class="subhi" style="margin-top:10px;">4. Multi‑Region Strategy</h4>
+			  <ul class="bullet-list">
+				<li>Regions: East US2 (Active) → Central US (Passive)</li>
+				<li>Model: Active–Passive (cost optimized, simpler failover for stateful workloads)</li>
+			  </ul>
+			</section>
+
+			<section class="project-section">
+			  <h4 class="subhi">5. Security + Networking Layer</h4>
+			  <p class="project-sub">This is where most candidates fail — emphasize it.</p>
+			  <ul class="bullet-list">
+				<li><strong>Vault Integration</strong> — secrets injected dynamically; no secrets in code or Git</li>
+				<li><strong>URL Whitelisting</strong> — restrict external access</li>
+				<li><strong>Namespace Isolation</strong> — per tenant / app separation</li>
+				<li><strong>Istio Service Mesh</strong> — mTLS, traffic routing, certificate management</li>
+			  </ul>
+			  <div class="callout">Istio ensures zero‑trust communication inside the cluster.</div>
+			</section>
+
+			<!-- Deployment strategy -->
+			<section class="project-section">
+			  <h4 class="subhi">6. Deployment Strategy (GitOps Control)</h4>
+			  <ul class="bullet-list">
+				<li>ArgoCD watches Git repos and syncs desired state</li>
+				<li>Auto‑sync for lower environments (Dev/UAT)</li>
+				<li>Manual sync for Production (approval gate)</li>
+			  </ul>
+			  <p class="project-sub"><strong>Why manual for Prod?</strong> Prevent accidental releases and enforce approval gates.</p>
+			</section>
+
+			<!-- End-to-end flow -->
+			<section class="project-section full">
+			  <h3 class="hi">3. End‑to‑End Flow</h3>
+			  <p class="project-sub">Once ARB approves, we provision tenant infrastructure using Terraform. Application onboarding is triggered via JSON, which creates Git repositories for application, ArgoCD, and Vault. ArgoCD manages deployments through GitOps, while secrets are securely handled in Vault. We enforce security using Istio, namespace isolation, and whitelisting. Deployments are automated but production releases require manual approval via ArgoCD sync.</p>
+			</section>
+
+			<!-- Strengths -->
+			<section class="project-section full">
+			  <h3 class="hi">4. Architecture Strengths</h3>
+			  <div class="strengths">
+				<div class="strength">✔ Fully automated onboarding (JSON‑driven)</div>
+				<div class="strength">✔ GitOps‑based deployment (traceability and auditability)</div>
+				<div class="strength">✔ Secure secrets management (HashiCorp Vault)</div>
+				<div class="strength">✔ Multi‑region resiliency (Active‑Passive)</div>
+				<div class="strength">✔ Strong governance via ARB</div>
+			  </div>
+			</section>
+		  </div>
 		</div>
+				
 		</div>
 	  </div>
 	</div>
