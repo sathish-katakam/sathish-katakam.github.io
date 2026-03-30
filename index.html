@@ -171,6 +171,55 @@ body{padding:20px;color:white;}
   transform:scale(1.05);
 }
 
+/* Blog list cards */
+.blog-list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 18px; }
+.blog-card { background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; transition: transform .18s ease, box-shadow .18s ease; }
+.blog-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+.blog-card h3 { margin: 0 0 8px; color: #60a5fa; font-size: 1.05rem; }
+.blog-card p { margin: 0; color: rgba(255,255,255,0.78); font-size: 0.95rem; }
+
+/* Blog post container */
+.blog-post { display: none; margin-top: 22px; padding: 22px; border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+.blog-post .post-header { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.blog-post .post-title { margin:0; padding:8px 12px; border-radius:8px; background: linear-gradient(90deg,#2563eb,#3b82f6); color:white; font-size:1.15rem; }
+.blog-post .post-close { background:transparent; border:1px solid rgba(255,255,255,0.08); color:#cbd5e1; padding:8px 10px; border-radius:8px; cursor:pointer; }
+
+/* Post body: two-column layout on wide screens */
+.post-body { margin-top:18px; display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:start; }
+/* Each section is a card; default occupies one column */
+.post-section { background: rgba(255,255,255,0.02); padding:16px; border-radius:10px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+.post-section h2 { color:#60a5fa; margin:0 0 8px; font-size:1.05rem; }
+.post-section h3 { color:#93c5fd; margin:8px 0 6px; font-size:0.98rem; }
+.post-section p, .post-section li { color: rgba(255,255,255,0.92); line-height:1.55; }
+
+/* Full-width sections (span both columns) */
+.post-section.full-width { grid-column: 1 / -1; }
+
+/* Table of contents */
+.toc { background: linear-gradient(90deg, rgba(37,99,235,0.06), rgba(59,130,246,0.03)); padding:12px; border-radius:10px; }
+.toc a { display:block; color:#cfe8ff; text-decoration:none; margin:6px 0; font-size:0.95rem; }
+.toc a:hover { text-decoration:underline; }
+
+/* Table styling */
+.post-table { width:100%; border-collapse:collapse; color: rgba(255,255,255,0.95); }
+.post-table th { text-align:left; color:#93c5fd; padding:8px 6px; }
+.post-table td { padding:6px; }
+
+/* Lightbox (certificate modal) */
+.lightbox-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.75); display:none; align-items:center; justify-content:center; z-index:9999; }
+.lightbox-content { max-width:90%; max-height:90%; border-radius:8px; overflow:auto; background:transparent; padding:12px; }
+.lightbox-content img { width:100%; height:auto; border-radius:6px; display:block; }
+
+/* Responsive: single column on small screens */
+@media (max-width:980px) {
+  .post-body { grid-template-columns: 1fr; }
+  .post-section { padding:14px; }
+}
+
+/* Ensure long posts scroll on short viewports */
+@media (max-height:700px) {
+  .blog-post { max-height: calc(100vh - 140px); overflow:auto; }
+}
 </style>
 </head>
 
@@ -256,7 +305,7 @@ body{padding:20px;color:white;}
 		   <!-- Google Cloud Generative AI Leader -->
 		  <div class="portfolio-item cert">
 			<h3>Certification</h3>
-			<img src="images/Google.png" alt="Google Cloud Generative AI Leader Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\Google.png" alt="Google Cloud Generative AI Leader Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
 			<p><strong>Google Cloud Certified: Generative AI Leader</strong></p>
 			<p>Issued by: Google Cloud</p>
 			<p>Issued Date: Feb 17, 2026</p>
@@ -267,7 +316,7 @@ body{padding:20px;color:white;}
 		  <!-- Microsoft DevOps Engineer Expert -->
 		  <div class="portfolio-item cert">
 			<h3>Certification</h3>
-			<img src="images/AZ400.png" alt="Microsoft DevOps Engineer Expert Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\AZ400.png" alt="Microsoft DevOps Engineer Expert Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
 			<p><strong>Microsoft Certified: DevOps Engineer Expert</strong></p>
 			<p>Issued by: Microsoft</p>
 			<p>Earned on: June 21, 2025</p>
@@ -278,7 +327,7 @@ body{padding:20px;color:white;}
 		  <!-- Microsoft Azure Administrator Associate -->
 		  <div class="portfolio-item cert">
 			<h3>Certification</h3>
-			<img src="images/104.png" alt="Microsoft Azure Administrator Associate Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\104.png" alt="Microsoft Azure Administrator Associate Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
 			<p><strong>Microsoft Certified: Azure Administrator Associate</strong></p>
 			<p>Issued by: Microsoft</p>
 			<p>Earned on: June 21, 2025</p>
@@ -289,7 +338,7 @@ body{padding:20px;color:white;}
 		  <!-- ITIL Foundation -->
 			 <div class="portfolio-item cert">
 			<h3>Certification</h3>
-			<img src="images/ITIL.png" alt="ITIL Foundation Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\ITIL.png" alt="ITIL Foundation Certificate" style="width:100%;border-radius:10px;margin-bottom:10px;"  onclick="openModal(this)">
 			<p><strong>ITIL® Foundation Certificate in IT Service Management</strong></p>
 			<p>Issued by: APMG International / AXELOS</p>
 			<p>Effective from: 10 June 2016</p>
@@ -298,25 +347,25 @@ body{padding:20px;color:white;}
 		 <!-- BADGES (NOW CORRECTLY INSIDE SAME GRID) -->
 		  <div class="portfolio-item badge">
 			<h3>Badge</h3>
-			<img src="images/AZ104.jpg"  onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\AZ104.jpg"  onclick="openModal(this)">
 			<p><strong>Azure Administrator Badge</strong></p>
 		  </div>
 
 		  <div class="portfolio-item badge">
 			<h3>Badge</h3>
-			<img src="images/AZ400Badge.png"  onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\AZ400Badge.png"  onclick="openModal(this)">
 			<p><strong>DevOps Engineer Badge</strong></p>
 		  </div>
 
 		  <div class="portfolio-item badge">
 			<h3>Badge</h3>
-			<img src="images/AI.png" onclick="openModal(this)">
+			<img src="C:\Users\sathi\Desktop\Certificates\AI.png" onclick="openModal(this)">
 			<p><strong>Google AI Leader Badge</strong></p>
 		  </div>
 		<!-- Projects (NOW CORRECTLY INSIDE SAME GRID) -->
 		<div class="portfolio-item project">
 		  <h3>Project</h3>
-		  <img src="images/Kubenetes.jpg"  onclick="openModal(this)">
+		  <img src="C:\Users\sathi\Desktop\Certificates\Kubenetes.jpg"  onclick="openModal(this)">
 		  <p><strong>High-Availability Network Design</strong></p>
 		</div>
 		</div>
@@ -413,15 +462,431 @@ body{padding:20px;color:white;}
         </div>
       </div>
     </div>
+	  
+		<div id="blog" class="section">
+		  <div class="card">
+			<h2>Blog</h2>
 
-    <!-- BLOG -->
-    <div id="blog" class="section">
-      <div class="card">
-        <h2>Blog</h2>
-        <p>Articles and thoughts on DevOps practices will appear here.</p>
-      </div>
-    </div>
+			<!-- Blog list (links to posts) -->
+			<div class="blog-list-grid">
+			  <div class="blog-card">
+				<a href="#ai-roadmap" class="blog-link" onclick="openBlogPost('ai-roadmap'); return false;">
+				  <h3>AI Road Map — Beginner to Expert</h3>
+				  <p>A practical 6‑month roadmap for DevOps engineers to learn AI, MLOps, and LLMs.</p>
+				</a>
+			  </div>
 
+			  <!-- Placeholder for other posts -->
+			  <div class="blog-card">
+				<a href="#post-2" class="blog-link" onclick="openBlogPost('post-2'); return false;">
+				  <h3>Post Title 2</h3>
+				  <p>Short summary of the second post.</p>
+				</a>
+			  </div>
+			</div>
+
+			<!-- Blog content area (posts) -->
+			<div id="blog-posts">
+
+			  <!-- AI Roadmap article -->
+			  <article id="ai-roadmap" class="card blog-post" aria-labelledby="ai-roadmap-title">
+				<div class="post-header">
+				  <h1 id="ai-roadmap-title" class="post-title">AI Road Map — Beginner to Expert</h1>
+				  <div>
+					<button class="post-close" onclick="closeBlogPost('ai-roadmap')">Close</button>
+				  </div>
+				</div>
+
+				<!-- Table of contents + content (TOC is full-width) -->
+				<div class="post-body">
+
+				  <!-- Table of contents spans full width -->
+				  <nav class="toc post-section full-width" aria-label="Table of contents">
+					<strong style="color:#e6f4ff;">Table of Contents</strong>
+					<a href="#intro" onclick="scrollToSection(event,'intro')">Introduction</a>
+					<a href="#stage1" onclick="scrollToSection(event,'stage1')">Stage 1: Foundations</a>
+					<a href="#stage2" onclick="scrollToSection(event,'stage2')">Stage 2: ML Hands-On</a>
+					<a href="#stage3" onclick="scrollToSection(event,'stage3')">Stage 3: MLOps</a>
+					<a href="#stage4" onclick="scrollToSection(event,'stage4')">Stage 4: LLMs & GenAI</a>
+					<a href="#stage5" onclick="scrollToSection(event,'stage5')">Stage 5: Expert</a>
+					<a href="#summary" onclick="scrollToSection(event,'summary')">Recommended Summary</a>
+					<a href="#6month" onclick="scrollToSection(event,'6month')">6‑Month Roadmap</a>
+					<a href="#endresult" onclick="scrollToSection(event,'endresult')">End Result</a>
+				  </nav>
+
+				  <!-- Left column / Right column sections alternate automatically -->
+				  <section id="stage1" class="post-section">
+					<h2>Stage 1: Build Your Foundations (2–4 Weeks)</h2>
+					<p>You already understand CI/CD, automation, cloud & containers — good news: those skills map perfectly to AI/MLOps.</p>
+
+					<h3>Learn Python (Core AI language)</h3>
+					<ul>
+					  <li>Variables, loops, functions</li>
+					  <li>Data structures</li>
+					  <li>Virtual environments</li>
+					  <li>Packages (pip, venv)</li>
+					</ul>
+
+					<h3>Recommended Path</h3>
+					<ul>
+					  <li>Practice: Automate tasks, create simple scripts</li>
+					  <li>Libraries: numpy, pandas, matplotlib</li>
+					</ul>
+
+					<h3>Understand the Basics of AI & ML</h3>
+					<ul>
+					  <li>What is Machine Learning?</li>
+					  <li>What is Deep Learning?</li>
+					  <li>Training vs inference</li>
+					  <li>What are LLMs (Large Language Models)?</li>
+					  <li>Vector embeddings</li>
+					  <li>GPUs vs CPUs</li>
+					</ul>
+				  </section>
+
+				  <section id="stage2" class="post-section">
+					<h2>Stage 2: Hands-On with Machine Learning (1–2 Months)</h2>
+
+					<h3>Learn the Key ML Libraries</h3>
+					<ul>
+					  <li>scikit learn (traditional ML)</li>
+					  <li>TensorFlow OR PyTorch (deep learning)</li>
+					  <li>HuggingFace Transformers (LLMs)</li>
+					</ul>
+
+					<h3>Try these</h3>
+					<ul>
+					  <li>Train a simple model</li>
+					  <li>Predict using a model</li>
+					  <li>Fine tune a small model</li>
+					  <li>Load a pre trained model from HuggingFace</li>
+					</ul>
+
+					<h3>Build Mini AI Projects</h3>
+					<ul>
+					  <li>Spam classifier</li>
+					  <li>Sentiment analyzer</li>
+					  <li>Chatbot using an open LLM</li>
+					  <li>Image classification using CNNs</li>
+					  <li>RAG (Retrieval Augmented Generation) app using embeddings</li>
+					</ul>
+				  </section>
+
+				  <section id="stage3" class="post-section">
+					<h2>Stage 3: Cloud + DevOps + AI = MLOps (2–3 Months)</h2>
+					<p>This is where DevOps engineers become extremely valuable.</p>
+
+					<h3>Learn MLOps Tools</h3>
+					<ul>
+					  <li>MLflow (tracking, model registry)</li>
+					  <li>DVC (data versioning)</li>
+					  <li>Kubeflow (pipelines)</li>
+					  <li>Airflow (orchestrations)</li>
+					  <li>Weights & Biases (experiment tracking)</li>
+					  <li>Docker + GPU containers</li>
+					</ul>
+
+					<h3>Learn Model Deployment</h3>
+					<ul>
+					  <li>FastAPI / Flask ML endpoints</li>
+					  <li>Dockerized models</li>
+					  <li>Deploy on Kubernetes</li>
+					  <li>Real time inference</li>
+					  <li>Batch inference</li>
+					  <li>Autoscaling GPU workloads</li>
+					</ul>
+				  </section>
+
+				  <section id="stage4" class="post-section">
+					<h2>Stage 4: LLMs & Generative AI Specialization (1–2 Months)</h2>
+					<h3>Master LLM Concepts</h3>
+					<ul>
+					  <li>LLM architecture (basic)</li>
+					  <li>Tokenization</li>
+					  <li>Fine tuning vs LoRA</li>
+					  <li>Prompt engineering</li>
+					  <li>Safety & Responsible AI</li>
+					  <li>RAG systems</li>
+					</ul>
+
+					<h3>Build Real-World GenAI Systems</h3>
+					<ul>
+					  <li>Chatbot over company data</li>
+					  <li>Document summarization</li>
+					  <li>AI-powered ticket classifier</li>
+					  <li>AI workflows integrated with DevOps tools</li>
+					  <li>Automating Infrastructure documentation using AI</li>
+					</ul>
+				  </section>
+
+				  <section id="stage5" class="post-section">
+					<h2>Stage 5: Become an Expert (Ongoing)</h2>
+					<h3>Master MLOps + LLMOps</h3>
+					<ul>
+					  <li>Multi model systems</li>
+					  <li>Distributed training</li>
+					  <li>Monitoring hallucinations</li>
+					  <li>GPU optimization</li>
+					  <li>Vector databases (Pinecone, Weaviate, FAISS)</li>
+					  <li>Secure enterprise AI deployments</li>
+					</ul>
+
+					<h3>Build an AI Portfolio</h3>
+					<ul>
+					  <li>GitHub projects</li>
+					  <li>End to end MLOps pipeline</li>
+					  <li>RAG chatbot</li>
+					  <li>Deployment examples</li>
+					  <li>Documentation + diagrams</li>
+					</ul>
+
+					<h3>Certifications (optional but useful)</h3>
+					<ul>
+					  <li>Azure AI Engineer</li>
+					  <li>Google ML Engineer</li>
+					  <li>AWS Machine Learning Specialty</li>
+					  <li>Databricks Machine Learning</li>
+					  <li>Kubernetes CKAD / CKA</li>
+					</ul>
+				  </section>
+
+				  <!-- Recommended summary spans full width -->
+				  <section id="summary" class="post-section full-width">
+					<h2>Recommended Roadmap Summary</h2>
+					<table class="post-table">
+					  <thead>
+						<tr><th>Stage</th><th>Focus</th><th>Duration</th></tr>
+					  </thead>
+					  <tbody>
+						<tr><td>1</td><td>Python + AI Basics</td><td>1 month</td></tr>
+						<tr><td>2</td><td>ML + Deep Learning Projects</td><td>1–2 months</td></tr>
+						<tr><td>3</td><td>MLOps + Deployment + Cloud</td><td>2–3 months</td></tr>
+						<tr><td>4</td><td>LLMs + GenAI</td><td>1–2 months</td></tr>
+						<tr><td>5</td><td>Expert-level AI Engineering</td><td>ongoing</td></tr>
+					  </tbody>
+					</table>
+				  </section>
+
+				  <!-- Full 6-month roadmap: make this full-width and visually distinct -->
+				  <section id="6month" class="post-section full-width" style="background: linear-gradient(180deg, rgba(37,99,235,0.04), rgba(59,130,246,0.02)); border: 1px solid rgba(37,99,235,0.08);">
+					<h2 style="color:#eaf4ff;">6‑Month Roadmap to Become AI + MLOps Engineer</h2>
+					<p><strong>Tailored for:</strong> Sathish Katakam – DevOps Engineer</p>
+
+					<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:12px;">
+					  <!-- Month 1 -->
+					  <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px;">
+						<h3 style="color:#dbeafe; margin-top:0;">Month 1 – Python + AI Fundamentals</h3>
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 1: Python Essentials</h4>
+						<ul>
+						  <li>Learn syntax, loops, functions</li>
+						  <li>Practice small automation scripts</li>
+						  <li>Use venv + pip</li>
+						</ul>
+						<p><strong>Outcome:</strong> Confident with Python basics.</p>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 2: Data Handling</h4>
+						<ul>
+						  <li>Learn numpy, pandas, matplotlib</li>
+						  <li>Work with CSV, JSON</li>
+						  <li>Simple data cleaning tasks</li>
+						</ul>
+						<p><strong>Project:</strong> Load and analyze a dataset (sales, weather, stock)</p>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 3: AI & ML Concepts</h4>
+						<ul>
+						  <li>What is Machine Learning</li>
+						  <li>Supervised vs unsupervised</li>
+						  <li>Training, testing, inference</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 4: Build Your First ML Model</h4>
+						<ul>
+						  <li>Install scikit-learn</li>
+						  <li>Train regression/classification models</li>
+						  <li>Evaluate with metrics</li>
+						</ul>
+					  </div>
+
+					  <!-- Month 2 -->
+					  <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px;">
+						<h3 style="color:#dbeafe; margin-top:0;">Month 2 – Machine Learning + Deep Learning</h3>
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 5: Deep Learning Basics</h4>
+						<ul>
+						  <li>Understand neural networks</li>
+						  <li>Learn PyTorch or TensorFlow</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 6: Build Deep Learning Models</h4>
+						<ul>
+						  <li>Train image classification (MNIST/CIFAR-10)</li>
+						  <li>Understand epochs, batch size, loss</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 7: HuggingFace Transformers</h4>
+						<ul>
+						  <li>Load pretrained models</li>
+						  <li>Use BERT for text classification</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 8: Mini Projects</h4>
+						<ul>
+						  <li>Text classifier</li>
+						  <li>Image recognizer</li>
+						  <li>Chatbot with a small LLM</li>
+						</ul>
+					  </div>
+
+					  <!-- Month 3 -->
+					  <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px;">
+						<h3 style="color:#dbeafe; margin-top:0;">Month 3 – MLOps Foundations</h3>
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 9: Model Deployment Basics</h4>
+						<ul>
+						  <li>FastAPI ML Inference API</li>
+						  <li>Test locally</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 10: Dockerizing AI Apps</h4>
+						<ul>
+						  <li>Build GPU-compatible images</li>
+						  <li>Optimize Dockerfiles</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 11: Kubernetes for AI</h4>
+						<ul>
+						  <li>Deploy inference API to k8s</li>
+						  <li>Autoscaling & GPU nodes</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 12: CI/CD for ML Models</h4>
+						<ul>
+						  <li>ML pipelines</li>
+						  <li>Automate testing + deployment</li>
+						</ul>
+					  </div>
+
+					  <!-- Month 4 -->
+					  <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px;">
+						<h3 style="color:#dbeafe; margin-top:0;">Month 4 – Full MLOps Systems</h3>
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 13: MLflow</h4>
+						<ul>
+						  <li>Experiment tracking</li>
+						  <li>Model registry</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 14: Data Versioning</h4>
+						<ul>
+						  <li>Learn DVC</li>
+						  <li>Track data changes</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 15: Kubeflow Pipelines</h4>
+						<ul>
+						  <li>Build ML pipeline (training → eval → deploy)</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 16: Airflow</h4>
+						<ul>
+						  <li>Schedule training jobs</li>
+						  <li>Build production workflows</li>
+						</ul>
+					  </div>
+
+					  <!-- Month 5 -->
+					  <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px;">
+						<h3 style="color:#dbeafe; margin-top:0;">Month 5 – LLMs + GenAI</h3>
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 17: LLM Basics</h4>
+						<ul>
+						  <li>Tokenization</li>
+						  <li>Embeddings</li>
+						  <li>Prompt engineering</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 18: Fine Tuning Models</h4>
+						<ul>
+						  <li>LoRA fine-tuning</li>
+						  <li>QLoRA</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 19: RAG</h4>
+						<ul>
+						  <li>Build RAG system</li>
+						  <li>Use vector DBs: FAISS, Pinecone, Weaviate</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 20: Build a Real-World LLM App</h4>
+						<ul>
+						  <li>Chat with PDF</li>
+						  <li>AI assistant for DevOps tickets</li>
+						</ul>
+					  </div>
+
+					  <!-- Month 6 -->
+					  <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:8px;">
+						<h3 style="color:#dbeafe; margin-top:0;">Month 6 – Cloud AI + Becoming Expert</h3>
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 21: Azure AI / AWS / GCP</h4>
+						<ul>
+						  <li>Choose one (Azure recommended)</li>
+						  <li>Focus on Azure ML Studio, Azure OpenAI, Managed endpoints</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 22: Monitoring AI Models</h4>
+						<ul>
+						  <li>Model drift</li>
+						  <li>Data drift</li>
+						  <li>Logging predictions</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 23: End-to-End Capstone Project</h4>
+						<ul>
+						  <li>Data ingestion</li>
+						  <li>Model training</li>
+						  <li>CI/CD, MLOps pipeline, Deployment, Monitoring</li>
+						</ul>
+
+						<h4 style="color:#c7ddff; margin:6px 0;">Week 24: Portfolio + Resume + Certification Prep</h4>
+						<ul>
+						  <li>Publish projects on GitHub</li>
+						  <li>Write documentation</li>
+						  <li>Prepare for Azure AI / AWS ML / Google ML certifications</li>
+						</ul>
+					  </div>
+					</div>
+				  </section>
+
+				  <!-- End result (full-width) -->
+				  <section id="endresult" class="post-section full-width">
+					<h2>End Result After 6 Months</h2>
+					<ul>
+					  <li>Build and train ML/LLM models</li>
+					  <li>Deploy AI apps with Docker + Kubernetes</li>
+					  <li>Build end-to-end MLOps pipelines</li>
+					  <li>Fine-tune LLMs</li>
+					  <li>Build RAG-based enterprise AI apps</li>
+					  <li>Use Azure/AWS/GCP AI services</li>
+					</ul>
+					<footer style="color:#cbd5e1;font-size:13px;padding-top:6px;">Created for Sathish Katakam</footer>
+				  </section>
+
+				</div>
+			  </article>
+
+			  <!-- Example second post -->
+			  <article id="post-2" class="card blog-post" aria-labelledby="post-2-title">
+				<div class="post-header">
+				  <h1 id="post-2-title" class="post-title">Post Title 2</h1>
+				  <button class="post-close" onclick="closeBlogPost('post-2')">Close</button>
+				</div>
+				<div class="post-body">
+				  <section class="post-section">
+					<h2>Summary</h2>
+					<p>Placeholder content for post 2.</p>
+				  </section>
+				</div>
+			  </article>
+
+			</div>
+		  </div>
+		</div>
     <!-- CONTACT -->
 	  <div id="contact" class="section">
 		<div class="card">
@@ -529,6 +994,62 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
   });
 
 });
+// Show the blog section and open a specific post
+  // Show the blog section and open a specific post
+  function openBlogPost(postId) {
+    // Ensure blog section is visible in the main nav
+    const blogNav = Array.from(document.querySelectorAll('.nav-item')).find(n => n.textContent.trim().toLowerCase() === 'blog');
+    if (blogNav) showSection('blog', blogNav);
+    // Hide all posts first
+    document.querySelectorAll('.blog-post').forEach(p => p.style.display = 'none');
+    // Show requested post
+    const post = document.getElementById(postId);
+    if (post) {
+      post.style.display = 'block';
+      // Scroll to the post smoothly
+      setTimeout(() => post.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+    }
+  }
+
+  // Close a post (hide it)
+  function closeBlogPost(postId) {
+    const post = document.getElementById(postId);
+    if (post) post.style.display = 'none';
+    // Scroll back to blog list header
+    const blogHeader = document.querySelector('#blog .card h2');
+    if (blogHeader) blogHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Smooth scroll helper for TOC links
+  function scrollToSection(e, id) {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Lightbox functions
+  function openLightbox(imgSrc) {
+    const overlay = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgSrc;
+    overlay.style.display = 'flex';
+  }
+  function closeLightbox(e) {
+    // close when clicking overlay (but not when clicking image)
+    if (e.target.id === 'lightbox' || e.target.id === 'lightbox-img') {
+      document.getElementById('lightbox').style.display = 'none';
+      document.getElementById('lightbox-img').src = '';
+    }
+  }
+
+  // Attach click-to-lightbox for certificate images (delegation)
+  document.addEventListener('click', function (e) {
+    const target = e.target;
+    if (target.tagName === 'IMG' && target.closest('.portfolio-item, .post-section')) {
+      // If the image is inside a portfolio-item or post-section, open lightbox
+      openLightbox(target.src);
+    }
+  });
 </script>
 </body>
 </html>
