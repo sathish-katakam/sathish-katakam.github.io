@@ -257,34 +257,31 @@ function toggleBlog(el){
   }
 }
 
-
 // ================== CONTACT FORM (EMAILJS) ==================
-document.getElementById("contactForm").addEventListener("submit", function(e){
+document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const btn = this.querySelector("button");
+  const statusMsg = document.getElementById("statusMsg");
+
   btn.innerText = "Sending...";
   btn.disabled = true;
 
   emailjs.sendForm(
-    "service_crymj4t",
-    "template_3k9woi7",
+    "service_crymj4t",   // ✅ Your Service ID
+    "template_ffesgoi",  // ✅ Your Template ID
     this
-  ).then(()=>{
-
-    document.getElementById("statusMsg").innerText = "✅ Message sent!";
+  ).then(() => {
+    statusMsg.innerText = "✅ Message Sent! I'll get back within 24 hours.";
+    statusMsg.style.color = "green";
     this.reset();
-
-    btn.innerText = "Send Message";
-    btn.disabled = false;
-
-  }, (error)=>{
-
-    console.error("EMAIL ERROR:", error);  // 🔥 shows real issue
-    document.getElementById("statusMsg").innerText = "❌ Failed to send";
-
+  }).catch((error) => {
+    console.error("EMAIL ERROR:", error);
+    statusMsg.innerText = "❌ Failed to send";
+    statusMsg.style.color = "red";
+  }).finally(() => {
+    // ✅ Always reset button here
     btn.innerText = "Send Message";
     btn.disabled = false;
   });
-
 });

@@ -197,13 +197,11 @@ img {
 
 /* Contact section (right side of top pane) */
 .top-pane-contact {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: nowrap;     /* keep them in one line */
   gap: 12px;
-  flex: 1;
   align-items: center;
 }
-
 .top-pane-contact .contact-item {
   align-items: center;
   justify-content: flex-start;
@@ -214,6 +212,8 @@ img {
   transition: var(--transition);
   gap: 10px;
   min-width: 0;
+  flex: 0 0 auto;        /* size based on content */
+  min-width: unset;      /* remove forced minimums */
 }
 
 .top-pane-contact .contact-item:hover {
@@ -460,6 +460,8 @@ img {
   width: 100%;
   border: 1px solid transparent;
   text-decoration: none;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .nav-item a .nav-icon-box {

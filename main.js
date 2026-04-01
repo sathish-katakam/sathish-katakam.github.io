@@ -204,3 +204,51 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Initialize first page ----
   navigateTo('about');
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ✅ INIT EMAILJS (replace with your real key)
+  emailjs.init("ScX08NxeV9u_t6J1w");
+  console.log("EmailJS initialized:", typeof emailjs);
+
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("submit-btn");
+  const statusMsg = document.getElementById("statusMsg");
+  const successBox = document.getElementById("form-success");
+
+  if (!form) {
+    console.error("Form not found");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    btn.innerText = "Sending...";
+    btn.disabled = true;
+
+    emailjs.sendForm(
+      "service_crymj4t",
+      "template_ffesgoi",
+      form
+    )
+    .then(() => {
+
+      statusMsg.innerText = "✅ Message sent!";
+      form.reset();
+
+      form.style.display = "none";
+      successBox.style.display = "block";
+
+    })
+    .catch((error) => {
+
+      console.error("EMAIL ERROR:", error);
+      statusMsg.innerText = "❌ Failed to send";
+
+    })
+    .finally(() => {
+      btn.innerText = "Send Message";
+      btn.disabled = false;
+    });
+
+  });

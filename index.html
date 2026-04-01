@@ -86,14 +86,14 @@
           <div class="contact-icon"><i class="fas fa-file-arrow-down"></i></div>
           <div class="contact-text">
             <div class="contact-label">Resume</div>
-           	<a href="https://drive.google.com/file/d/14L8axffW6E2tBeldVrfwoEOwYHrTqh4i/view?usp=drive_link" download class="contact-value"> Download CV </a>
+           	<a href="https://drive.google.com/file/d/14L8axffW6E2tBeldVrfwoEOwYHrTqh4i/view?usp=drive_link" download class="contact-value"> Download</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon"><i class="fas fa-circle-check"></i></div>
           <div class="contact-text">
             <div class="contact-label">Status</div>
-            <div class="contact-value" style="color:#22c55e;">Open to Work 🚀</div>
+            <div class="contact-value" style="color:#22c55e;">🟢 Open 🚀</div>
           </div>
         </div>
       </div>
@@ -884,9 +884,77 @@
 		</article>
         </div>
       </section>
+	  
+	    <section id="page-contact" class="content-page" aria-label="Contact form">
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon" style="background:linear-gradient(135deg,#22c55e,#14b8a6)"><i
+                class="fas fa-paper-plane"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">Contact Me</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
 
-    </main>
-  </div>
+          <!-- Status Indicator -->
+          <div class="contact-status-bar">
+            <div class="status-indicator"></div>
+            <span class="status-text">Open for opportunities: Yes — actively looking for new challenges 🚀</span>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="contact-cards-grid">
+            <div class="contact-info-card">
+              <i class="fas fa-envelope-open-text"></i>
+              <h4>Email</h4>
+              <p>sathish.katakam@gmail.com</p>
+            </div>
+            <div class="contact-info-card">
+              <i class="fas fa-map-location-dot"></i>
+              <h4>Location</h4>
+              <p>Hyderabad, IN</p>
+            </div>
+            <div class="contact-info-card">
+              <i class="fab fa-linkedin"></i>
+              <h4>LinkedIn</h4>
+              <p>/in/sathish-katakam</p>
+            </div>
+          </div>	
+		  <!-- Contact Form -->
+		  <form class="contact-form" id="contactForm" novalidate>
+			<div class="form-row">
+			  <div class="form-group">
+				<label for="contact-name">Full Name</label>
+				<input type="text" id="contact-name" name="name" placeholder="Sathish" required autocomplete="name" />
+			  </div>
+			  <div class="form-group">
+				<label for="contact-email">Email Address</label>
+				<input type="email" id="contact-email" name="email" placeholder="sathish@example.com" required autocomplete="email" />
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="contact-subject">Subject</label>
+			  <select id="contact-subject" name="subject">
+				<option value="">Select a subject...</option>
+				<option value="collaboration">Project Collaboration</option>
+				<option value="consulting">DevOps Consulting</option>
+				<option value="hiring">Hiring / Recruitment</option>
+				<option value="general">General Inquiry</option>
+			  </select>
+			</div>
+			<div class="form-group">
+			  <label for="contact-message">Message</label>
+			  <textarea id="contact-message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+			</div>
+			<button type="submit" class="submit-btn" id="submit-btn">
+			  <i class="fas fa-paper-plane"></i>
+			  Send Message
+			</button>
+		  <p id="statusMsg"></p>
+		</form>
+
+		</main>
+	  </div>
 
   <!-- ==================== MOBILE BOTTOM NAV ==================== -->
   <nav class="mobile-nav" aria-label="Mobile navigation">
@@ -925,6 +993,10 @@
   </nav>
 
   <!-- Scripts -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+   emailjs.init("ScX08NxeV9u_t6J1w");
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 
