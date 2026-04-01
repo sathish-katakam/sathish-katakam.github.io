@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Roadmap for DevOps Engineers</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #60a5fa;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #93c5fd;
+      margin-top: 40px;
+      border-left: 4px solid #3b82f6;
+      padding-left: 10px;
+    }
+
+    h3 {
+      color: #c7ddff;
+      margin-top: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .highlight-box {
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.3);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.02);
+      padding: 16px;
+      border-radius: 10px;
+    }
+
+    .toc {
+      background: rgba(255,255,255,0.02);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .toc a {
+      display: block;
+      color: #93c5fd;
+      text-decoration: none;
+      margin-bottom: 6px;
+    }
+
+    .toc a:hover {
+      color: #60a5fa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>AI Roadmap for DevOps Engineers (Beginner → Expert)</h1>
+
+    <!-- TOC -->
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <a href="#stage1">Stage 1: Foundations</a>
+      <a href="#stage2">Stage 2: ML Hands-On</a>
+      <a href="#stage3">Stage 3: MLOps</a>
+      <a href="#stage4">Stage 4: LLMs & GenAI</a>
+      <a href="#stage5">Stage 5: Expert</a>
+      <a href="#summary">Summary</a>
+      <a href="#roadmap">6-Month Plan</a>
+    </div>
+
+    <!-- Stage 1 -->
+    <div id="stage1" class="section">
+      <h2>Stage 1: Build Your Foundations (2–4 Weeks)</h2>
+
+      <h3>Learn Python</h3>
+      <ul>
+        <li>Variables, loops, functions</li>
+        <li>Data structures</li>
+        <li>Virtual environments</li>
+        <li>pip, venv</li>
+      </ul>
+
+      <h3>Libraries</h3>
+      <ul>
+        <li>numpy, pandas, matplotlib</li>
+      </ul>
+
+      <h3>AI Basics</h3>
+      <ul>
+        <li>Machine Learning & Deep Learning</li>
+        <li>Training vs inference</li>
+        <li>LLMs</li>
+        <li>Embeddings</li>
+      </ul>
+    </div>
+
+    <!-- Stage 2 -->
+    <div id="stage2" class="section">
+      <h2>Stage 2: Hands-On ML (1–2 Months)</h2>
+
+      <ul>
+        <li>scikit-learn</li>
+        <li>TensorFlow / PyTorch</li>
+        <li>HuggingFace</li>
+      </ul>
+
+      <h3>Projects</h3>
+      <ul>
+        <li>Spam classifier</li>
+        <li>Sentiment analysis</li>
+        <li>Chatbot</li>
+        <li>Image classification</li>
+      </ul>
+    </div>
+
+    <!-- Stage 3 -->
+    <div id="stage3" class="section">
+      <h2>Stage 3: MLOps (2–3 Months)</h2>
+
+      <ul>
+        <li>MLflow, DVC, Kubeflow</li>
+        <li>Airflow</li>
+        <li>Docker + GPU</li>
+      </ul>
+
+      <h3>Deployment</h3>
+      <ul>
+        <li>FastAPI</li>
+        <li>Kubernetes</li>
+        <li>Real-time inference</li>
+      </ul>
+    </div>
+
+    <!-- Stage 4 -->
+    <div id="stage4" class="section">
+      <h2>Stage 4: LLMs & GenAI (1–2 Months)</h2>
+
+      <ul>
+        <li>Tokenization</li>
+        <li>Prompt engineering</li>
+        <li>RAG systems</li>
+      </ul>
+
+      <h3>Projects</h3>
+      <ul>
+        <li>Chatbot over documents</li>
+        <li>Summarization</li>
+        <li>AI automation tools</li>
+      </ul>
+    </div>
+
+    <!-- Stage 5 -->
+    <div id="stage5" class="section">
+      <h2>Stage 5: Expert Level</h2>
+
+      <ul>
+        <li>Distributed training</li>
+        <li>GPU optimization</li>
+        <li>Vector databases</li>
+      </ul>
+    </div>
+
+    <!-- Summary -->
+    <div id="summary" class="section">
+      <h2>Summary</h2>
+
+      <div class="highlight-box">
+        <p>Stage 1 → Python + Basics</p>
+        <p>Stage 2 → ML Projects</p>
+        <p>Stage 3 → MLOps</p>
+        <p>Stage 4 → LLMs</p>
+        <p>Stage 5 → Expert</p>
+      </div>
+    </div>
+
+    <!-- 6 Month Plan -->
+    <div id="roadmap" class="section">
+      <h2>6-Month Roadmap</h2>
+
+      <div class="grid">
+        <div class="card">Month 1: Python + AI Basics</div>
+        <div class="card">Month 2: ML + DL</div>
+        <div class="card">Month 3: Deployment + Docker</div>
+        <div class="card">Month 4: MLOps Tools</div>
+        <div class="card">Month 5: LLM + RAG</div>
+        <div class="card">Month 6: Cloud + Capstone</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
