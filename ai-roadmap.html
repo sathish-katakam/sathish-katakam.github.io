@@ -1,232 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Roadmap for DevOps Engineers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Roadmap for DevOps Engineers</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.7;
-    }
+<style>
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    h1 {
-      color: #60a5fa;
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+h1 { color: #60a5fa; }
+h2 {
+  color: #93c5fd;
+  margin-top: 40px;
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+}
+h3 { color: #c7ddff; }
 
-    h2 {
-      color: #93c5fd;
-      margin-top: 40px;
-      border-left: 4px solid #3b82f6;
-      padding-left: 10px;
-    }
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
 
-    h3 {
-      color: #c7ddff;
-      margin-top: 20px;
-    }
+.section { margin-bottom: 40px; }
 
-    ul {
-      padding-left: 20px;
-    }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.table th, .table td {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  text-align: left;
+}
 
-    li {
-      margin-bottom: 6px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
 
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .highlight-box {
-      background: rgba(59,130,246,0.08);
-      border: 1px solid rgba(59,130,246,0.3);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.02);
-      padding: 16px;
-      border-radius: 10px;
-    }
-
-    .toc {
-      background: rgba(255,255,255,0.02);
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
-
-    .toc a {
-      display: block;
-      color: #93c5fd;
-      text-decoration: none;
-      margin-bottom: 6px;
-    }
-
-    .toc a:hover {
-      color: #60a5fa;
-    }
-  </style>
+.card {
+  background: rgba(255,255,255,0.02);
+  padding: 14px;
+  border-radius: 10px;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <h1>AI Roadmap for DevOps Engineers (Beginner → Expert)</h1>
+<h1>AI Roadmap for DevOps Engineers (Beginner → Expert)</h1>
 
-    <!-- TOC -->
-    <div class="toc">
-      <h2>Table of Contents</h2>
-      <a href="#stage1">Stage 1: Foundations</a>
-      <a href="#stage2">Stage 2: ML Hands-On</a>
-      <a href="#stage3">Stage 3: MLOps</a>
-      <a href="#stage4">Stage 4: LLMs & GenAI</a>
-      <a href="#stage5">Stage 5: Expert</a>
-      <a href="#summary">Summary</a>
-      <a href="#roadmap">6-Month Plan</a>
-    </div>
+<!-- Stage 1 -->
+<div class="section">
+<h2>Stage 1: Build Your Foundations (2–4 Weeks)</h2>
+<p>You already understand CI/CD, automation, cloud & containers — good news: those skills map perfectly to AI/MLOps.</p>
 
-    <!-- Stage 1 -->
-    <div id="stage1" class="section">
-      <h2>Stage 1: Build Your Foundations (2–4 Weeks)</h2>
+<h3>1. Learn Python (Core AI language)</h3>
+<ul>
+<li>Variables, loops, functions</li>
+<li>Data structures</li>
+<li>Virtual environments</li>
+<li>Packages (pip, venv)</li>
+</ul>
 
-      <h3>Learn Python</h3>
-      <ul>
-        <li>Variables, loops, functions</li>
-        <li>Data structures</li>
-        <li>Virtual environments</li>
-        <li>pip, venv</li>
-      </ul>
+<p>You only need practical Python, not full software engineering expertise.</p>
 
-      <h3>Libraries</h3>
-      <ul>
-        <li>numpy, pandas, matplotlib</li>
-      </ul>
+<h3>Recommended Path:</h3>
+<ul>
+<li>Practice: Automate tasks, create simple scripts</li>
+<li>Libraries: numpy, pandas, matplotlib</li>
+</ul>
 
-      <h3>AI Basics</h3>
-      <ul>
-        <li>Machine Learning & Deep Learning</li>
-        <li>Training vs inference</li>
-        <li>LLMs</li>
-        <li>Embeddings</li>
-      </ul>
-    </div>
+<h3>2. Understand the Basics of AI & ML</h3>
+<p>You don’t need math-heavy courses. Start simple.</p>
+<ul>
+<li>What is Machine Learning?</li>
+<li>What is Deep Learning?</li>
+<li>Training vs inference</li>
+<li>What are LLMs (Large Language Models)?</li>
+<li>Vector embeddings</li>
+<li>GPUs vs CPUs</li>
+</ul>
+</div>
 
-    <!-- Stage 2 -->
-    <div id="stage2" class="section">
-      <h2>Stage 2: Hands-On ML (1–2 Months)</h2>
+<!-- Stage 2 -->
+<div class="section">
+<h2>Stage 2: Hands-On with Machine Learning (1–2 Months)</h2>
 
-      <ul>
-        <li>scikit-learn</li>
-        <li>TensorFlow / PyTorch</li>
-        <li>HuggingFace</li>
-      </ul>
+<h3>3. Learn the Key ML Libraries</h3>
+<ul>
+<li>scikit learn (traditional ML)</li>
+<li>TensorFlow OR PyTorch (deep learning)</li>
+<li>HuggingFace Transformers (LLMs)</li>
+</ul>
 
-      <h3>Projects</h3>
-      <ul>
-        <li>Spam classifier</li>
-        <li>Sentiment analysis</li>
-        <li>Chatbot</li>
-        <li>Image classification</li>
-      </ul>
-    </div>
+<h3>Try these:</h3>
+<ul>
+<li>Train a simple model</li>
+<li>Predict using a model</li>
+<li>Fine tune a small model</li>
+<li>Load a pre trained model from HuggingFace</li>
+</ul>
 
-    <!-- Stage 3 -->
-    <div id="stage3" class="section">
-      <h2>Stage 3: MLOps (2–3 Months)</h2>
+<h3>4. Build Mini AI Projects</h3>
+<ul>
+<li>Spam classifier</li>
+<li>Sentiment analyzer</li>
+<li>Chatbot using an open LLM</li>
+<li>Image classification using CNNs</li>
+<li>RAG app using embeddings</li>
+</ul>
+<p>Small projects give massive confidence.</p>
+</div>
 
-      <ul>
-        <li>MLflow, DVC, Kubeflow</li>
-        <li>Airflow</li>
-        <li>Docker + GPU</li>
-      </ul>
+<!-- Stage 3 -->
+<div class="section">
+<h2>Stage 3: Cloud + DevOps + AI = MLOps (2–3 Months)</h2>
+<p>This is where DevOps engineers become extremely valuable.</p>
 
-      <h3>Deployment</h3>
-      <ul>
-        <li>FastAPI</li>
-        <li>Kubernetes</li>
-        <li>Real-time inference</li>
-      </ul>
-    </div>
+<h3>5. Learn MLOps Tools</h3>
+<ul>
+<li>MLflow</li>
+<li>DVC</li>
+<li>Kubeflow</li>
+<li>Airflow</li>
+<li>Weights & Biases</li>
+<li>Docker + GPU containers</li>
+</ul>
 
-    <!-- Stage 4 -->
-    <div id="stage4" class="section">
-      <h2>Stage 4: LLMs & GenAI (1–2 Months)</h2>
+<h3>6. Learn Model Deployment</h3>
+<ul>
+<li>FastAPI / Flask ML endpoints</li>
+<li>Dockerized models</li>
+<li>Deploy on Kubernetes</li>
+<li>Real time inference</li>
+<li>Batch inference</li>
+<li>Autoscaling GPU workloads</li>
+</ul>
 
-      <ul>
-        <li>Tokenization</li>
-        <li>Prompt engineering</li>
-        <li>RAG systems</li>
-      </ul>
+<h3>7. Move to Cloud AI Services</h3>
+<ul>
+<li>Azure ML</li>
+<li>Azure AI Studio</li>
+<li>Azure OpenAI</li>
+<li>Azure DevOps</li>
+<li>Training jobs</li>
+<li>Inference endpoints</li>
+<li>Monitoring drift</li>
+</ul>
+</div>
 
-      <h3>Projects</h3>
-      <ul>
-        <li>Chatbot over documents</li>
-        <li>Summarization</li>
-        <li>AI automation tools</li>
-      </ul>
-    </div>
+<!-- Stage 4 -->
+<div class="section">
+<h2>Stage 4: LLMs & Generative AI Specialization (1–2 Months)</h2>
 
-    <!-- Stage 5 -->
-    <div id="stage5" class="section">
-      <h2>Stage 5: Expert Level</h2>
+<h3>8. Master LLM Concepts</h3>
+<ul>
+<li>LLM architecture</li>
+<li>Tokenization</li>
+<li>Fine tuning vs LoRA</li>
+<li>Prompt engineering</li>
+<li>Responsible AI</li>
+<li>RAG systems</li>
+</ul>
 
-      <ul>
-        <li>Distributed training</li>
-        <li>GPU optimization</li>
-        <li>Vector databases</li>
-      </ul>
-    </div>
+<h3>9. Build Real-World GenAI Systems</h3>
+<ul>
+<li>Chatbot over company data</li>
+<li>Document summarization</li>
+<li>AI-powered ticket classifier</li>
+<li>AI workflows with DevOps tools</li>
+<li>Automating documentation</li>
+</ul>
+</div>
 
-    <!-- Summary -->
-    <div id="summary" class="section">
-      <h2>Summary</h2>
+<!-- Stage 5 -->
+<div class="section">
+<h2>Stage 5: Become an Expert (Ongoing)</h2>
 
-      <div class="highlight-box">
-        <p>Stage 1 → Python + Basics</p>
-        <p>Stage 2 → ML Projects</p>
-        <p>Stage 3 → MLOps</p>
-        <p>Stage 4 → LLMs</p>
-        <p>Stage 5 → Expert</p>
-      </div>
-    </div>
+<h3>10. Master MLOps + LLMOps</h3>
+<ul>
+<li>Multi model systems</li>
+<li>Distributed training</li>
+<li>Monitoring hallucinations</li>
+<li>GPU optimization</li>
+<li>Vector databases</li>
+<li>Secure deployments</li>
+</ul>
 
-    <!-- 6 Month Plan -->
-    <div id="roadmap" class="section">
-      <h2>6-Month Roadmap</h2>
+<h3>11. Build an AI Portfolio</h3>
+<ul>
+<li>GitHub projects</li>
+<li>MLOps pipeline</li>
+<li>RAG chatbot</li>
+<li>Deployment examples</li>
+<li>Documentation</li>
+</ul>
 
-      <div class="grid">
-        <div class="card">Month 1: Python + AI Basics</div>
-        <div class="card">Month 2: ML + DL</div>
-        <div class="card">Month 3: Deployment + Docker</div>
-        <div class="card">Month 4: MLOps Tools</div>
-        <div class="card">Month 5: LLM + RAG</div>
-        <div class="card">Month 6: Cloud + Capstone</div>
-      </div>
-    </div>
+<h3>12. Certifications</h3>
+<ul>
+<li>Azure AI Engineer</li>
+<li>Google ML Engineer</li>
+<li>AWS ML Specialty</li>
+<li>Databricks ML</li>
+<li>Kubernetes CKAD / CKA</li>
+</ul>
+</div>
 
-  </div>
+<!-- Summary -->
+<div class="section">
+<h2>Recommended Roadmap Summary</h2>
+
+<table class="table">
+<tr><th>Stage</th><th>Focus</th><th>Duration</th></tr>
+<tr><td>1</td><td>Python + AI Basics</td><td>1 month</td></tr>
+<tr><td>2</td><td>ML + Deep Learning Projects</td><td>1–2 months</td></tr>
+<tr><td>3</td><td>MLOps + Deployment + Cloud</td><td>2–3 months</td></tr>
+<tr><td>4</td><td>LLMs + GenAI</td><td>1–2 months</td></tr>
+<tr><td>5</td><td>Expert-level AI Engineering</td><td>ongoing</td></tr>
+</table>
+</div>
+
+<!-- 6 Month -->
+<div class="section">
+<h2>6-Month Roadmap</h2>
+
+<div class="grid">
+<div class="card">Month 1 – Python + AI Fundamentals</div>
+<div class="card">Month 2 – ML + Deep Learning</div>
+<div class="card">Month 3 – MLOps Foundations</div>
+<div class="card">Month 4 – Full MLOps Systems</div>
+<div class="card">Month 5 – LLMs + GenAI</div>
+<div class="card">Month 6 – Cloud AI + Expert</div>
+</div>
+</div>
+
+<!-- End -->
+<div class="section">
+<h2>End Result After 6 Months</h2>
+<ul>
+<li>Build and train ML/LLM models</li>
+<li>Deploy AI apps with Docker + Kubernetes</li>
+<li>Build end-to-end MLOps pipelines</li>
+<li>Fine-tune LLMs</li>
+<li>Build RAG-based enterprise AI apps</li>
+<li>Use Azure/AWS/GCP AI services</li>
+</ul>
+</div>
+
+</div>
 </body>
 </html>
