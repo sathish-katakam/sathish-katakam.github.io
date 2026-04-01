@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Sathish Katakam — DevOps & Cloud Engineer</title>
+  <meta name="description"
+    content="Alex Rivera is a DevOps, SRE, and Cloud Engineer specializing in infrastructure automation, Kubernetes, and cloud-native solutions." />
+  <meta name="keywords" content="DevOps, SRE, Cloud Engineer, Kubernetes, Docker, AWS, Terraform, Portfolio" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alex Rivera — DevOps & Cloud Engineer" />
+  <meta property="og:description" content="Portfolio of Alex Rivera — DevOps, SRE, and Cloud Engineering specialist." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Ambient Canvas Background -->
+  <canvas id="dot-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <div class="page-wrapper">
+
+    <!-- ==================== TOP PANE (Profile Hero) ==================== -->
+    <div class="top-pane" role="banner">
+
+      <!-- Left: Avatar + Name + Title -->
+      <div class="top-pane-identity">
+        <div class="avatar-wrapper">
+          <img src="assets/images/profile.png" alt="Sathish Katakam - Profile Photo" />
+          <div class="avatar-status" title="Available for work"></div>
+        </div>
+        <div class="top-pane-name-group">
+          <h1 class="profile-name">Sathish Katakam</h1>
+          <div class="profile-title">DevOps | SRE | Cloud</div>
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://github.com/sathish-katakam" class="social-link" title="GitHub" aria-label="GitHub"><i
+                class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sathish-katakam/" class="social-link" title="LinkedIn"
+              aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/sathish_katakam" class="social-link" title="Twitter" aria-label="Twitter"><i
+                class="fab fa-x-twitter"></i></a>
+            <a href="https://hub.docker.com/repositories/sathishkatakam" class="social-link" title="Docker Hub"
+              aria-label="Docker Hub"><i class="fab fa-docker"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="top-pane-contact">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">sathish.katakam@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
+          <div class="contact-text">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Hyderabad, IN</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-file-arrow-down"></i></div>pro
+          <div class="contact-text">
+            <div class="contact-label">Resume</div>
+            <div class="contact-value">Download CV</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-circle-check"></i></div>
+          <div class="contact-text">
+            <div class="contact-label">Status</div>
+            <div class="contact-value" style="color:#22c55e;">Open to Work 🚀</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== LEFT SIDEBAR (Nav only) ==================== -->
+    <aside class="profile-sidebar" role="complementary" aria-label="Main navigation">
+
+      <!-- Navigation Card -->
+      <nav class="nav-card" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item" role="listitem">
+            <a href="#" data-page="about" id="nav-about" aria-label="About page">
+              <div class="nav-icon-box"><i class="fas fa-user-circle"></i></div>
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav-item" role="listitem">
+            <a href="#" data-page="resume" id="nav-resume" aria-label="Resume page">
+              <div class="nav-icon-box"><i class="fas fa-file-lines"></i></div>
+              <span>Resume</span>
+            </a>
+          </li>
+          <li class="nav-item" role="listitem">
+            <a href="#" data-page="portfolio" id="nav-portfolio" aria-label="Portfolio page">
+              <div class="nav-icon-box"><i class="fas fa-layer-group"></i></div>
+              <span>Portfolio</span>
+            </a>
+          </li>
+          <li class="nav-item" role="listitem">
+            <a href="#" data-page="blog" id="nav-blog" aria-label="Blog page">
+              <div class="nav-icon-box"><i class="fas fa-newspaper"></i></div>
+              <span>Blog</span>
+            </a>
+          </li>
+          <li class="nav-item" role="listitem">
+            <a href="#" data-page="contact" id="nav-contact" aria-label="Contact page">
+              <div class="nav-icon-box"><i class="fas fa-paper-plane"></i></div>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content" role="main">
+
+      <!-- ===== ABOUT PAGE ===== -->
+      <section id="page-about" class="content-page" aria-label="About me">
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon"><i class="fas fa-user"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">About Me</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
+
+          <p class="bio-text">
+            Hey there! 👋 I'm <strong>Sathish Katakam</strong>, a passionate <strong>DevOps & Cloud Engineer</strong>
+            with 6+ years of experience building and maintaining resilient, scalable infrastructure. I thrive at the
+            intersection of development and operations, turning complex systems into smooth, automated pipelines.
+          </p>
+          <p class="bio-text">
+            I specialize in orchestrating containerized workloads with <strong>Kubernetes</strong>, automating cloud
+            infrastructure with <strong>Terraform</strong>, and designing CI/CD pipelines that ship code fast and
+            safely. My philosophy: if you're doing it twice, automate it.
+          </p>
+          <p class="bio-text">
+            I’m an enthusiastic learner who constantly explores new technologies, automates repetitive tasks, and enjoys
+            deep debugging to solve complex problems. I’m passionate about cloud-native ecosystems and continuously
+            experiment to build efficient, scalable solutions. I’m always open to exciting projects and collaborations —
+            let’s build something impactful together.
+          </p>
+
+          <!-- Stats -->
+          <div class="highlight-grid">
+            <div class="highlight-box">
+              <div class="highlight-number">6/12</div>
+              <div class="highlight-label">DevOps/Total Experience.</div>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-number">10+</div>
+              <div class="highlight-label">Projects</div>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-number">4</div>
+              <div class="highlight-label">Certifications</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What I'm Doing Card -->
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon" style="background: linear-gradient(135deg, #f97316, #ef4444)"><i
+                class="fas fa-rocket"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">What I'm Doing</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon-wrap">🔧</div>
+              <div class="service-body">
+                <h3>DevOps Engineering</h3>
+                <p>Designing and implementing end-to-end CI/CD pipelines, infrastructure automation, and deployment
+                  strategies for high-traffic systems.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-wrap">☁️</div>
+              <div class="service-body">
+                <h3>Cloud Architecture</h3>
+                <p>Architecting multi-cloud solutions on AWS, GCP, and Azure. Optimizing for performance, cost, and
+                  security at scale.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-wrap">🛡️</div>
+              <div class="service-body">
+                <h3>Site Reliability</h3>
+                <p>Ensuring 99.99% uptime through SLOs, SLAs, error budgets, chaos engineering, and proactive monitoring
+                  strategies.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-wrap">⚙️</div>
+              <div class="service-body">
+                <h3>Infrastructure as Code</h3>
+                <p>Writing production-grade Terraform, Ansible, and Helm charts to provision and manage cloud resources
+                  declaratively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== RESUME PAGE ===== -->
+      <section id="page-resume" class="content-page" aria-label="Resume and experience">
+
+        <!-- Experience -->
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6)"><i
+                class="fas fa-briefcase"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">Experience</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
+
+          <p class="resume-section-title"><i class="fas fa-network-wired"></i> Work History</p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date"><i class="fas fa-calendar"></i> Feb 2022 — Present</div>
+                <div class="timeline-title">Asst.Consultant</div>
+                <div class="timeline-company">🏢 TCS, Hyderabad. IN</div>
+                <p class="timeline-desc">Led infrastructure and CI/CD optimization across 20+ AKS workloads and 20+
+                  clusters (300+ nodes). Reduced deployment time by 30% and improved success rate by 40% through
+                  pipeline redesign and automation. Built Terraform-based landing zones and standardized Helm
+                  deployments across multi-environment platforms (Dev–Prod). Implemented GitOps using ArgoCD, reducing
+                  manual effort by 60%. Architected multi-region (East US2–Central US) Kubernetes platform supporting
+                  20+ LOBs and 200K+ daily requests. Improved reliability by reducing downtime 25% and cutting incident
+                  resolution time through RCA and platform stabilization. Optimized cloud costs by ~15% via resource
+                  cleanup and utilization improvements.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date"><i class="fas fa-calendar"></i> May 2019 — Jan 2022</div>
+                <div class="timeline-title">Lead Analyst/DevOps Engineer</div>
+                <div class="timeline-company">🏢 CGI, Hyderabad. IN</div>
+                <p class="timeline-desc">Built Jenkins CI/CD pipelines, reducing manual effort by 50% and improving
+                  release reliability. Automated deployments and developed Bash/Go tooling, increasing team productivity
+                  by 70%. Managed configuration with SaltStack and led Oracle upgrades (12c→19c) with minimal downtime.
+                  Owned P1/P2 incident resolution and improved system stability. Mentored engineers on DevOps and CI/CD
+                  best practices.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date"><i class="fas fa-calendar"></i> Jan 2018 — May 2022</div>
+                <div class="timeline-title">Build & Release Engineer</div>
+                <div class="timeline-company">🏢 BOP Consultants Pvt. Ltd, Bangalore, IN</div>
+                <p class="timeline-desc">Provisioned AWS infrastructure with Terraform, reducing provisioning time by
+                  50% and cutting costs by 20% through cloud migration. Built Jenkins CI/CD pipelines, reducing
+                  deployment time by 40% and improving release reliability. Implemented CloudWatch monitoring to enhance
+                  incident detection. Managed Git (Gitolite, Gerrit) to streamline collaboration and reduce conflicts.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date"><i class="fas fa-calendar"></i> Feb 2013 — Nov 2017</div>
+                <div class="timeline-title">Sr.Software Engineer/SRE</div>
+                <div class="timeline-company">🏢 UST-Global, Trivandrum.IN</div>
+                <p class="timeline-desc">Maintained >99% SLA for P1/P2 incidents with minimal escalations through strong
+                  L3 production support. Improved application performance by 25% by upgrading JBoss and Java. Built
+                  Spring Batch components for large-scale data processing. Automated monitoring using shell scripting
+                  and Grafana, improving issue detection by 30%.</p>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="content-card">
+              <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #14b8a6, #3b82f6)"><i
+                    class="fas fa-graduation-cap"></i></div>
+                <div class="section-title-group">
+                  <h2 class="section-title">Education</h2>
+                  <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+                </div>
+              </div>
+
+              <p class="resume-section-title"><i class="fas fa-book-open"></i> Academic Background</p>
+
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background: var(--accent-teal);"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date"><i class="fas fa-calendar"></i> 2014 — 2018</div>
+                    <div class="timeline-title">M.Tech (Computer Sceience)</div>
+                    <div class="timeline-company">🎓 JNTU, Hyderabad</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="content-card">
+              <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #f97316, #ec4899)"><i
+                    class="fas fa-code"></i></div>
+                <div class="section-title-group">
+                  <h2 class="section-title">Skills</h2>
+                  <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+                </div>
+              </div>
+
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Kubernetes</span>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Terraform / IaC</span>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">AWS / Azure</span>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">CI/CD (Jenkins/GitHub)</span>
+                    <span class="skill-percent">92%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:92%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Linux / Shell Scripting</span>
+                    <span class="skill-percent">94%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:94%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Python / Go</span>
+                    <span class="skill-percent">60%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:60%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name"> Grafana</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width:85%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-tags">
+                <span class="tech-tag">Kubernetes</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Terraform</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Ansible</span>
+                <span class="tech-tag">Helm</span>
+                <span class="tech-tag">ArgoCD</span>
+                <span class="tech-tag">Jenkins</span>
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">Grafana</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">Bash</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Oracle</span>
+              </div>
+            </div>
+      </section>
+
+      <!-- ===== PORTFOLIO PAGE ===== -->
+      <section id="page-portfolio" class="content-page" aria-label="Portfolio projects">
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon" style="background:linear-gradient(135deg,#8b5cf6,#3b82f6)"><i
+                class="fas fa-layer-group"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">Portfolio</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="filter-buttons" role="group" aria-label="Portfolio filter">
+            <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+            <button class="filter-btn" data-filter="devops" id="filter-devops">DevOps</button>
+            <button class="filter-btn" data-filter="cloud" id="filter-cloud">Cloud</button>
+            <button class="filter-btn" data-filter="security" id="filter-security">Security</button>
+            <button class="filter-btn" data-filter="cert" id="filter-cert">Certifications</button>
+          </div>
+
+          <!-- Portfolio Grid -->
+          <div class="portfolio-grid">
+
+            <div class="portfolio-item" data-category="devops">
+              <div class="portfolio-img-wrap">
+                <img src="assets/images/proj1.png" alt="CI/CD Pipeline Dashboard" loading="lazy" />
+                <div class="portfolio-overlay">
+                  <p class="portfolio-overlay-text">GitOps-based CI/CD pipeline with blue/green deployments and
+                    auto-rollback capabilities.</p>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <div class="portfolio-category-badge">DevOps</div>
+                <div class="portfolio-title">Kubernetes CI/CD Pipeline</div>
+              </div>
+            </div>
+
+            <div class="portfolio-item" data-category="cloud">
+              <div class="portfolio-img-wrap">
+                <img src="assets/images/proj2.png" alt="Cloud Infrastructure Architecture" loading="lazy" />
+                <div class="portfolio-overlay">
+                  <p class="portfolio-overlay-text">Multi-region AWS infrastructure with auto-scaling, HA RDS, and
+                    global CDN.</p>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <div class="portfolio-category-badge">Cloud</div>
+                <div class="portfolio-title">Multi-Region AWS Platform</div>
+              </div>
+            </div>
+
+            <div class="portfolio-item" data-category="security">
+              <div class="portfolio-img-wrap">
+                <img src="assets/images/proj3.png" alt="Security Monitoring System" loading="lazy" />
+                <div class="portfolio-overlay">
+                  <p class="portfolio-overlay-text">Real-time threat detection SIEM integrated with Kubernetes audit
+                    logs and network policy enforcement.</p>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <div class="portfolio-category-badge">Security</div>
+                <div class="portfolio-title">Cloud-Native SIEM Platform</div>
+              </div>
+            </div>
+
+            <div class="portfolio-item" data-category="cert">
+              <div class="portfolio-img-wrap"
+                style="background: linear-gradient(135deg,#1a0533,#3b0764); aspect-ratio: 16/9; display:flex; align-items:center; justify-content:center;">
+                <i class="fas fa-certificate" style="font-size:3rem; color: #a855f7; opacity:0.8;"></i>
+              </div>
+              <div class="portfolio-info">
+                <div class="portfolio-category-badge">Certification</div>
+                <div class="portfolio-title">AWS Solutions Architect Pro</div>
+              </div>
+            </div>
+
+            <div class="portfolio-item" data-category="cloud">
+              <div class="portfolio-img-wrap"
+                style="background: linear-gradient(135deg,#052e16,#14532d); aspect-ratio: 16/9; display:flex; align-items:center; justify-content:center;">
+                <i class="fab fa-terraform" style="font-size:3rem; color: #4ade80; opacity:0.8;"></i>
+              </div>
+              <div class="portfolio-info">
+                <div class="portfolio-category-badge">Cloud</div>
+                <div class="portfolio-title">Terraform Enterprise Modules</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== BLOG PAGE ===== -->
+      <section id="page-blog" class="content-page" aria-label="Blog articles">
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon" style="background:linear-gradient(135deg,#f97316,#eab308)"><i
+                class="fas fa-newspaper"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">Blog</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
+
+          <div class="blog-list">
+
+            <article class="blog-item" role="article">
+              <div class="blog-thumb">
+                <img src="assets/images/proj1.png" alt="Kubernetes Scaling article thumbnail" loading="lazy" />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">Kubernetes</span>
+                  <span class="blog-date"><i class="fas fa-calendar-alt"></i> Mar 15, 2025</span>
+                </div>
+                <h3 class="blog-title">Mastering Kubernetes HPA: Auto-scaling Beyond CPU Metrics</h3>
+                <p class="blog-excerpt">An in-depth guide to configuring Horizontal Pod Autoscalers with custom metrics
+                  from Prometheus, KEDA, and external event sources for truly reactive autoscaling.</p>
+                <span class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="blog-item" role="article">
+              <div class="blog-thumb">
+                <img src="assets/images/proj2.png" alt="Terraform article thumbnail" loading="lazy" />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">IaC</span>
+                  <span class="blog-date"><i class="fas fa-calendar-alt"></i> Feb 28, 2025</span>
+                </div>
+                <h3 class="blog-title">Terraform at Scale: Managing 1000+ Resources Without Losing Your Mind</h3>
+                <p class="blog-excerpt">Best practices for structuring Terraform workspaces, using remote state with
+                  DynamoDB locking, and implementing drift detection in large enterprise environments.</p>
+                <span class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="blog-item" role="article">
+              <div class="blog-thumb">
+                <img src="assets/images/proj3.png" alt="DevSecOps article thumbnail" loading="lazy" />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">Security</span>
+                  <span class="blog-date"><i class="fas fa-calendar-alt"></i> Feb 10, 2025</span>
+                </div>
+                <h3 class="blog-title">DevSecOps in Practice: Shifting Security Left in Your Pipeline</h3>
+                <p class="blog-excerpt">How to integrate Trivy, Snyk, and OPA Gatekeeper into your CI/CD workflow to
+                  catch security vulnerabilities before they reach production.</p>
+                <span class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="blog-item" role="article">
+              <div class="blog-thumb"
+                style="background:linear-gradient(135deg,#0f172a,#1e3a5f); display:flex; align-items:center; justify-content:center;">
+                <i class="fas fa-chart-line" style="font-size:2.5rem; color:var(--accent-blue); opacity:0.7;"></i>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">Observability</span>
+                  <span class="blog-date"><i class="fas fa-calendar-alt"></i> Jan 22, 2025</span>
+                </div>
+                <h3 class="blog-title">Building a Full Observability Stack with the LGTM Stack</h3>
+                <p class="blog-excerpt">A complete walkthrough of setting up Loki, Grafana, Tempo, and Mimir for logs,
+                  metrics, traces, and long-term storage in a production Kubernetes cluster.</p>
+                <span class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT PAGE ===== -->
+      <section id="page-contact" class="content-page" aria-label="Contact form">
+        <div class="content-card">
+          <div class="section-header">
+            <div class="section-icon" style="background:linear-gradient(135deg,#22c55e,#14b8a6)"><i
+                class="fas fa-paper-plane"></i></div>
+            <div class="section-title-group">
+              <h2 class="section-title">Contact Me</h2>
+              <div class="accent-bar"><span class="bar-orange"></span><span class="bar-blue"></span></div>
+            </div>
+          </div>
+
+          <!-- Status Indicator -->
+          <div class="contact-status-bar">
+            <div class="status-indicator"></div>
+            <span class="status-text">Open for opportunities: Yes — actively looking for new challenges 🚀</span>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="contact-cards-grid">
+            <div class="contact-info-card">
+              <i class="fas fa-envelope-open-text"></i>
+              <h4>Email</h4>
+              <p>sathish.katakam@gmail.com</p>
+            </div>
+            <div class="contact-info-card">
+              <i class="fas fa-map-location-dot"></i>
+              <h4>Location</h4>
+              <p>Hyderabad, IN</p>
+            </div>
+            <div class="contact-info-card">
+              <i class="fab fa-linkedin"></i>
+              <h4>LinkedIn</h4>
+              <p>/in/sathish-katakam</p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Sathish" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="sathish@example.com" required
+                  autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="">Select a subject...</option>
+                <option value="collaboration">Project Collaboration</option>
+                <option value="consulting">DevOps Consulting</option>
+                <option value="hiring">Hiring / Recruitment</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell me about your project or opportunity..."
+                required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="form-success">
+            <i class="fas fa-circle-check"></i>
+            <h3>Message Sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you within 24 hours. 🚀</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==================== MOBILE BOTTOM NAV ==================== -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-list" role="list">
+      <li class="mobile-nav-item">
+        <a href="#" data-page="about" aria-label="About">
+          <i class="fas fa-user-circle"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" data-page="resume" aria-label="Resume">
+          <i class="fas fa-file-lines"></i>
+          <span>Resume</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" data-page="portfolio" aria-label="Portfolio">
+          <i class="fas fa-layer-group"></i>
+          <span>Portfolio</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" data-page="blog" aria-label="Blog">
+          <i class="fas fa-newspaper"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" data-page="contact" aria-label="Contact">
+          <i class="fas fa-paper-plane"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

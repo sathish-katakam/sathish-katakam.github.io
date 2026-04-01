@@ -204,3 +204,87 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Initialize first page ----
   navigateTo('about');
 });
+
+/* =============================================
+   PROJECT TOGGLE (global — called via onclick)
+   ============================================= */
+function toggleProject(headerEl) {
+  const details = headerEl.nextElementSibling;
+  const isOpen = headerEl.classList.contains('open');
+
+  if (isOpen) {
+    headerEl.classList.remove('open');
+    details.classList.remove('open');
+  } else {
+    headerEl.classList.add('open');
+    details.classList.add('open');
+    // Smooth scroll so the card is in view
+    setTimeout(() => {
+      headerEl.closest('.portfolio-item').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+}
+
+function openCertModal(el){
+  const modal = document.getElementById("certModal");
+  const modalImg = document.getElementById("certModalImg");
+
+  modal.style.display = "flex";
+  modalImg.src = el.querySelector("img").src;
+}
+
+function closeCertModal(){
+  document.getElementById("certModal").style.display = "none";
+}
+
+function toggleBlog(el){
+  const targetId = el.getAttribute("data-target") + "-content";
+  const content = document.getElementById(targetId);
+
+  const isOpen = el.classList.contains("open");
+
+  // Close all
+  document.querySelectorAll(".blog-item").forEach(b => b.classList.remove("open"));
+  document.querySelectorAll(".blog-full").forEach(c => c.classList.remove("open"));
+
+  if(!isOpen){
+    el.classList.add("open");
+    content.classList.add("open");
+
+    setTimeout(() => {
+      content.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+  }
+}
+
+
+// ================== CONTACT FORM (EMAILJS) ==================
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const btn = this.querySelector("button");
+  btn.innerText = "Sending...";
+  btn.disabled = true;
+
+  emailjs.sendForm(
+    "service_crymj4t",
+    "template_3k9woi7",
+    this
+  ).then(()=>{
+
+    document.getElementById("statusMsg").innerText = "✅ Message sent!";
+    this.reset();
+
+    btn.innerText = "Send Message";
+    btn.disabled = false;
+
+  }, (error)=>{
+
+    console.error("EMAIL ERROR:", error);  // 🔥 shows real issue
+    document.getElementById("statusMsg").innerText = "❌ Failed to send";
+
+    btn.innerText = "Send Message";
+    btn.disabled = false;
+  });
+
+});
